@@ -1,0 +1,9 @@
+**/node_modules/
+**/.cache/
+**/.next/
+**/.env
+**/*.tsbuildinfo
+data/
+test-results/
+app/vendor/plugin-multi-tenant/dist/
+app/next-env.d.ts

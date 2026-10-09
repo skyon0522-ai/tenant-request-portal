@@ -1,0 +1,62 @@
+{
+  "copiedExampleFiles": 50,
+  "copiedPluginFiles": 91,
+  "implementationHashesUnchanged": true,
+  "changed": [
+    {
+      "path": "{baseline-source => app}/src/app/(app)/page.tsx",
+      "added": 8,
+      "removed": 16,
+      "generated": false
+    },
+    {
+      "path": "{baseline-source => app}/src/collections/Pages/access/superAdminOrTenantAdmin.ts",
+      "added": 1,
+      "removed": 7,
+      "generated": false
+    },
+    {
+      "path": "{baseline-source => app}/src/collections/Pages/index.ts",
+      "added": 34,
+      "removed": 3,
+      "generated": false
+    },
+    {
+      "path": "{baseline-source => app}/src/collections/Tenants/access/byTenant.ts",
+      "added": 2,
+      "removed": 1,
+      "generated": false
+    },
+    {
+      "path": "{baseline-source => app}/src/collections/Users/index.ts",
+      "added": 10,
+      "removed": 14,
+      "generated": false
+    },
+    {
+      "path": "{baseline-source => app}/src/payload-types.ts",
+      "added": 8,
+      "removed": 2,
+      "generated": true
+    },
+    {
+      "path": "{baseline-source => app}/src/payload.config.ts",
+      "added": 2,
+      "removed": 8,
+      "generated": false
+    },
+    {
+      "path": "{baseline-source => app}/src/seed.ts",
+      "added": 17,
+      "removed": 0,
+      "generated": false
+    }
+  ],
+  "customApplicationDelta": {
+    "files": 7,
+    "added": 74,
+    "removed": 49
+  },
+  "newCustomRuntimeCoreFiles": 0,
+  "runtimePackage": "app/vendor/plugin-multi-tenant (local file package; compiled from retained src)"
+}

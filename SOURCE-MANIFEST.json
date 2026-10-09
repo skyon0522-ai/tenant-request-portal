@@ -1,0 +1,258 @@
+{
+  "repository": "https://github.com/payloadcms/payload",
+  "tag": "v3.90.2",
+  "commit": "6254c3bf561a205223849a6497d7dae824d4e81b",
+  "license": "MIT",
+  "exampleSource": [
+    {
+      "source": "examples/multi-tenant/.env.example",
+      "sha256": "421ef5c93e39e216f70d04d6d4eef684a577813497841578e4342bb705899baf",
+      "bytes": 246
+    },
+    {
+      "source": "examples/multi-tenant/.eslintrc.cjs",
+      "sha256": "90d58362cc63a8a0d875638477f2afe870e24728d7768d7768c23a63d27dab69",
+      "bytes": 63
+    },
+    {
+      "source": "examples/multi-tenant/.gitignore",
+      "sha256": "34378e2b7c3512850944039aba5a336702523a6ce18c6ccfebdf4f87b8750dfb",
+      "bytes": 47
+    },
+    {
+      "source": "examples/multi-tenant/.swcrc",
+      "sha256": "cb8646c6589864bd7be95ca26f167c21452b760de993c2c2d3159f78e04389b6",
+      "bytes": 457
+    },
+    {
+      "source": "examples/multi-tenant/next.config.mjs",
+      "sha256": "323294622f97263400d6d5e19c17256850021f3a7a34da3f09921744b746d79c",
+      "bytes": 481
+    },
+    {
+      "source": "examples/multi-tenant/package.json",
+      "sha256": "338e8601a8d3b6433136bde4b00d53c0f4aa4ff8d5edac8038c2e87824bfcd0d",
+      "bytes": 1587
+    },
+    {
+      "source": "examples/multi-tenant/pnpm-lock.yaml",
+      "sha256": "8cf2d8679034f139876fc430950dbced2b642fbde139d4d308f708fd94bd25be",
+      "bytes": 253912
+    },
+    {
+      "source": "examples/multi-tenant/README.md",
+      "sha256": "b8171a4db6dcda86e566612ebc424e921f5b0825ac9973e91dbf35e156b22114",
+      "bytes": 6295
+    },
+    {
+      "source": "examples/multi-tenant/tsconfig.json",
+      "sha256": "dbef401afca7369cf3e8b6136583eac9d1f24d8796b0262e9d80bcb236d177c4",
+      "bytes": 826
+    },
+    {
+      "source": "examples/multi-tenant/src/payload-types.ts",
+      "sha256": "adb0a9d711f08483d92100e2adac90196781dd8f82c6038f233454a381a39567",
+      "bytes": 7360
+    },
+    {
+      "source": "examples/multi-tenant/src/payload.config.ts",
+      "sha256": "2be15386a1d4e5993faa7e6681725f4f809aeba4f240c300099115d1cc94392f",
+      "bytes": 1952
+    },
+    {
+      "source": "examples/multi-tenant/src/seed.ts",
+      "sha256": "985f8bb6812808859b4d00ae39b9a01e7e7bf005da8ec2fcf0bfb813f4be642d",
+      "bytes": 2555
+    },
+    {
+      "source": "examples/multi-tenant/src/access/isSuperAdmin.ts",
+      "sha256": "b92f70b520eb2adcb62ed33d68ccd1b6d1162b075be7c78e7207f8163840aa65",
+      "bytes": 299
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(app)/index.scss",
+      "sha256": "49d90f8bad7625b85ede15821531acf4c012167b30d7f6b9964843d85778d619",
+      "bytes": 65
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(app)/layout.tsx",
+      "sha256": "f52b263b49cbff56a31561d4f0184e054c754ad8912c197d33bb8d71490e9b67",
+      "bytes": 406
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(app)/page.tsx",
+      "sha256": "308e45bdbf581c16dbead897a55606e6f330e0020799c9e1a58704bf115f66ab",
+      "bytes": 1029
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(app)/tenant-domains/[tenant]/page.tsx",
+      "sha256": "496ad884b1fd0ea2aedc0110715d5d3769598740f22f2dd54dc9fbf5eeb0dee9",
+      "bytes": 57
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(app)/tenant-domains/[tenant]/login/page.tsx",
+      "sha256": "a58533b7a70e35bf5cfdb51cf5e7af169c055c135f25941c01a88584f3c04e3c",
+      "bytes": 370
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(app)/tenant-domains/[tenant]/[...slug]/page.tsx",
+      "sha256": "b9f9af3a78a0b9f555d57e254e9a0a5fe8e0e1f9d2df6f2492e53d096257d33e",
+      "bytes": 2560
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(app)/tenant-slugs/[tenant]/page.tsx",
+      "sha256": "496ad884b1fd0ea2aedc0110715d5d3769598740f22f2dd54dc9fbf5eeb0dee9",
+      "bytes": 57
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(app)/tenant-slugs/[tenant]/login/page.tsx",
+      "sha256": "047c6f9c847903a035de8cef9be334ebaf3fa8125ad49842cbe7f723988118c5",
+      "bytes": 368
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(app)/tenant-slugs/[tenant]/[...slug]/page.tsx",
+      "sha256": "2d71a8fb9252f4f05ef38b91b05994e613ca2837ac13225e40cd215311754e1b",
+      "bytes": 2504
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(payload)/custom.scss",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(payload)/layout.tsx",
+      "sha256": "b4104c12316bebc75db1d2d4d0680aa5a5c70e70f785f6f544c930683bee68c1",
+      "bytes": 811
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(payload)/admin/importMap.js",
+      "sha256": "31d4874a3255ac54224217a4cc44251482bddc23d11aca06b94700eeae365c92",
+      "bytes": 740
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(payload)/admin/[[...segments]]/not-found.tsx",
+      "sha256": "aa140533f1c51de14684d08124c6c78eafbbe8f2334b2ea88e7544c41674ef85",
+      "bytes": 735
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(payload)/admin/[[...segments]]/page.tsx",
+      "sha256": "ff52d391c4ab5a7a98c423689f73195a335fec9f635efe036d95e3413af2e35d",
+      "bytes": 719
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(payload)/api/graphql/route.ts",
+      "sha256": "7d02d6088f7462fd16a05790e85320d6b0c8773f9b656dc107feb0172f8f7c8b",
+      "bytes": 315
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(payload)/api/graphql-playground/route.ts",
+      "sha256": "3631dbbecee8a8ecc0221e0f700c18dd10e783ae671e8bf2f2767404c228115c",
+      "bytes": 275
+    },
+    {
+      "source": "examples/multi-tenant/src/app/(payload)/api/[...slug]/route.ts",
+      "sha256": "715959cc35507dfc8a719e0a71eb16076bfa35600def3ffe5dca326b2f1b027d",
+      "bytes": 461
+    },
+    {
+      "source": "examples/multi-tenant/src/app/components/Login/client.page.tsx",
+      "sha256": "8153f42bc0f61d06d92cbdb82e6a578d1e3ff4b6f26c5359222accf7a99e026b",
+      "bytes": 2333
+    },
+    {
+      "source": "examples/multi-tenant/src/app/components/Login/index.scss",
+      "sha256": "ff69f16ca1f505b103c893c3bda9da5e618a0fe5f93cf7f2cb17d69f89c0def0",
+      "bytes": 400
+    },
+    {
+      "source": "examples/multi-tenant/src/app/components/RenderPage/index.tsx",
+      "sha256": "5dc478db82e79b618bf8d6c47a9e71e72e0b0af423c787757cab7ac6acce8607",
+      "bytes": 425
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Pages/index.ts",
+      "sha256": "d7f719272992f2bb2fac9d2e906e4660f1c32da42ae0df20ebd29207af558dbd",
+      "bytes": 717
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Pages/access/superAdminOrTenantAdmin.ts",
+      "sha256": "46ba80c4a950be56f142efc0ebd942319b86cbf9dc21d789577185c1e09199ba",
+      "bytes": 621
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Pages/hooks/ensureUniqueSlug.ts",
+      "sha256": "ff3c1dbb7a1f112d2a6017d44503ea817c63051d7878c3f1fd65b3929cd2a0ed",
+      "bytes": 1854
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Tenants/index.ts",
+      "sha256": "9b4a54e46fb404c3cbcd631ebae9c5dc90ae996a21798003059a26af22a475b9",
+      "bytes": 1149
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Tenants/access/byTenant.ts",
+      "sha256": "48bd1d126172963586476f58622c3f998728598f04cdf4ffdc96871c773a1989",
+      "bytes": 767
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Tenants/access/updateAndDelete.ts",
+      "sha256": "1fe1b31a472c64ea6820ad212021569f978dc2a264dd1cc184e81419520f40cd",
+      "bytes": 393
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Users/index.ts",
+      "sha256": "69be7eca090d1a791bc7dcbabad8555ac3c322d667fb9277f2903ffe7cd01820",
+      "bytes": 2875
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Users/access/create.ts",
+      "sha256": "62c338f173ca7e4f52b3a95207283983b13b21cc4eed8a1a664e59c3dad51ec2",
+      "bytes": 882
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Users/access/isAccessingSelf.ts",
+      "sha256": "a3497423704eb1e616281be444580747581decccbf9eebc3daa7037a6e5a7572",
+      "bytes": 189
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Users/access/read.ts",
+      "sha256": "8f5d791e1e67cfa1bc5e5506cf9bf1c8bb9bf9a3463ac8256097efbca385e6fb",
+      "bytes": 1446
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Users/access/updateAndDelete.ts",
+      "sha256": "4c66c1be22f9bf0372149ea465dcd52d299050e75c022e0008a906fcd92b5b46",
+      "bytes": 844
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Users/endpoints/externalUsersLogin.ts",
+      "sha256": "4780d339fddb649a38a324611fada4a3dfbc5181694a6aa174aac082f1bff3f5",
+      "bytes": 3259
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Users/hooks/ensureUniqueUsername.ts",
+      "sha256": "a9513d0e1e609f1cae385c940c5e9badef685373bf62ff85095ad33b33fbd92c",
+      "bytes": 2084
+    },
+    {
+      "source": "examples/multi-tenant/src/collections/Users/hooks/setCookieBasedOnDomain.ts",
+      "sha256": "38d181e14ca9ad15638e803817a8c17546212d58faac481d8e6d277ca99db05c",
+      "bytes": 1137
+    },
+    {
+      "source": "examples/multi-tenant/src/utilities/extractID.ts",
+      "sha256": "ede95df62cb6fe93890b1d2cab42f3ea0edf658d88981237725e5b4634b3c576",
+      "bytes": 303
+    },
+    {
+      "source": "examples/multi-tenant/src/utilities/getCollectionIDType.ts",
+      "sha256": "770f9a5674bb6f7a61ccc5b7b4d8fae4a14b711e069771bb673991e8c86b8852",
+      "bytes": 308
+    },
+    {
+      "source": "examples/multi-tenant/src/utilities/getUserTenantIDs.ts",
+      "sha256": "d2a8143f61c3b664e70d2d054ccc7d7aa0b54ddcdd26c3400b0de4399b7c155a",
+      "bytes": 686
+    }
+  ]
+}

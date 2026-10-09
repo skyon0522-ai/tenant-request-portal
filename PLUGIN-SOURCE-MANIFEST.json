@@ -1,0 +1,457 @@
+[
+  {
+    "source": "packages/plugin-multi-tenant/src/defaults.ts",
+    "sha256": "2a37018b3f41ff74cb9b8aae3f2ecc9239e7f1ce1988b2fdc776120141710d92",
+    "bytes": 202
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/index.ts",
+    "sha256": "480dd42f11e8c5ab0b825dc1925f9077f5718c76932db9b539728ce9cf575860",
+    "bytes": 20874
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/types.ts",
+    "sha256": "0e0eb2826c29c942809563b94d3fd830c11c85a507bdedd23ec358c7c7ae8f82",
+    "bytes": 8088
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/components/AssignTenantFieldModal/index.client.tsx",
+    "sha256": "85f57dbe3dd0546c6248d28a07024e0350a2c8204d000b0aaefefffe964e7bb1",
+    "bytes": 3975
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/components/AssignTenantFieldModal/index.scss",
+    "sha256": "035e2832853e7b2f21bf5eca9f9796bde0fa9b7c9981d411fec34c6ae8e739e1",
+    "bytes": 1664
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/components/GlobalViewRedirect/index.ts",
+    "sha256": "da25fbe941c98055bde575480fd2759e7f81c31e3af8b6fde82bc7b64c8992a2",
+    "bytes": 1516
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/components/TenantField/index.client.tsx",
+    "sha256": "053ddd24adf63bd4d4dcaab058fb918bf7e74df5a3f69674cea36e5270d0d831",
+    "bytes": 6173
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/components/TenantField/index.scss",
+    "sha256": "beab1fa02a09da126fda8407fb6aa69840bd0d53bd835fe305ed42c423938c5e",
+    "bytes": 1555
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/components/TenantSelector/index.client.tsx",
+    "sha256": "5124a085b53809bf334f97865ba85b029c0883c0f0f110c0452b0aef4a8a7cbe",
+    "bytes": 3438
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/components/TenantSelector/index.scss",
+    "sha256": "20b807fe46ee61346020593ed5206f2b31e18f7f0f46f903f21d46c5d7334fd1",
+    "bytes": 59
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/components/TenantSelector/index.tsx",
+    "sha256": "c1a4464b9f849bba2b715de35254cf3edea3a30a8be09c81018031a47237208a",
+    "bytes": 434
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/components/WatchTenantCollection/index.tsx",
+    "sha256": "a6d2192fd4fcd8ea753efa87197f6c330e6f4020f47161e5a10d9ab029bd32b1",
+    "bytes": 1428
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/endpoints/getTenantOptionsEndpoint.ts",
+    "sha256": "f0fdd91987177a12a080b92194cdb02f9e13d96f7720511a6aec626d6aabd4c8",
+    "bytes": 1127
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/exports/client.ts",
+    "sha256": "ff2a1bc67d40207a4530a49776449c138628bb61eebe5823af375a5338f01489",
+    "bytes": 343
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/exports/fields.ts",
+    "sha256": "b9b56e308f0b5aa6e8d071c00b652ce1900049f3d5d63c9766aecec4082046aa",
+    "bytes": 134
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/exports/rsc.ts",
+    "sha256": "67a8cedd4e80272b9843f0d57f999e35baa944e9fceb738e67767c0db0437753",
+    "bytes": 316
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/exports/types.ts",
+    "sha256": "3378b207aed4bb5e1afdd7b15ed34ab911a2400780494ec5484e8eb9c8364a8f",
+    "bytes": 59
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/exports/utilities.ts",
+    "sha256": "5e4c3cd923884503bbb07f09e12cfc54f2011871413bdcd01895610b6f0a3efe",
+    "bytes": 355
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/fields/tenantField/index.spec.ts",
+    "sha256": "4351e26b53aff528cfa334cf47d37d025e70ccd7c059efd015df541ed7f02c8d",
+    "bytes": 1230
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/fields/tenantField/index.ts",
+    "sha256": "5a42b3ac4fa332b1ee9981d64960f8daedec8180531548744d8149e706ef3a4f",
+    "bytes": 6362
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/fields/tenantsArrayField/index.ts",
+    "sha256": "0f350f81f4cc32c5fed3f0e1ef8583ddf034b179f8511681da64f19131f87c2c",
+    "bytes": 1547
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/filters/filterDocumentsByTenants.ts",
+    "sha256": "cb7a83e3633d4f68dc19f718e343f7d72bf2ef6473bd35a9b45d13f8253de21d",
+    "bytes": 2256
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/hooks/afterTenantDelete.ts",
+    "sha256": "30a148c1ed8ca3034265c036f323b5ef65826cd84514134b8d1d270d5d33ea3e",
+    "bytes": 3605
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/hooks/enforceTenantMembership.ts",
+    "sha256": "1c395887fa9f3d69f99b8404ff62ec8681dba31d5daab9977d3859f290bb3cc3",
+    "bytes": 2440
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/providers/TenantSelectionProvider/index.client.tsx",
+    "sha256": "d31ad14ee808702a3e6860f09b44a3b779c403d87497ffbc064918dfad35b68a",
+    "bytes": 9861
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/providers/TenantSelectionProvider/index.tsx",
+    "sha256": "2b6d4c98a4b62ad219fc0ab96a4022d7f3e0dcd49e773b4d39ddd7fc697e89a5",
+    "bytes": 1901
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/index.ts",
+    "sha256": "ae43c5924aefd0f717dd903137d5796d8f50f9290e5219f6e154d0c83a58ce8e",
+    "bytes": 2288
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/types.ts",
+    "sha256": "f52a2ec4d120a2125302344706ce2fc98b1f9268f163f0e613db0be37def6928",
+    "bytes": 419
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/ar.ts",
+    "sha256": "380cd3592fc1b7cd6f2f9b7df54070a3d23bc128d9819ee127497d67f4280395",
+    "bytes": 524
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/az.ts",
+    "sha256": "1883e0e1c402335aaa5db1f338388e5f549ade659d27c732db264b18725ad12f",
+    "bytes": 505
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/bg.ts",
+    "sha256": "f3d7c1eaa84d65fd6bbc0c0bcd33eac2b646f4d9406e02c3c5ad677512de3dd5",
+    "bytes": 540
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/bnBd.ts",
+    "sha256": "2a441bad4ac220919d92a030bff10de699826430257509442feb3d8d8d092fb8",
+    "bytes": 652
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/bnIn.ts",
+    "sha256": "a5b77b740f4090daa2d5d93725cb82b88df024c2e88973c398a1a19ea49ddaee",
+    "bytes": 665
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/ca.ts",
+    "sha256": "0c7ffa0ab556f82e685b492ac8a5e0d2e537562b742b3bbe7602a8a4ca7c8a67",
+    "bytes": 482
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/cs.ts",
+    "sha256": "ad86ca22447efcb60c9dd35baf129a64d628a1ad139c52b018b88334291120d3",
+    "bytes": 493
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/da.ts",
+    "sha256": "64af313451a06fb5f332ca454322529dbf34eaef56ac731bc45de16e893771f7",
+    "bytes": 472
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/de.ts",
+    "sha256": "daa3b68f32316f5723f32a499a1ddaf992fe575a3469dbf61ed83ef3079d9ef3",
+    "bytes": 486
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/en.ts",
+    "sha256": "473f81521123e0f9045a51bd464d14ef02fda7db4d280a1246d8473c9dc05235",
+    "bytes": 422
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/es.ts",
+    "sha256": "9af8c0899cf279a2f6cdbc1b83fe5ae85c20475cb4381bbd60b93919ba1b2c07",
+    "bytes": 486
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/et.ts",
+    "sha256": "3ca1e598174d3428f5a6d87f30ff44d192b001dc1f7cb4345106545d6b244cd4",
+    "bytes": 483
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/fa.ts",
+    "sha256": "1d9c9545e87b52197b8ac4a2656b8f99eaa5903265177377ff4475a68ac6e74c",
+    "bytes": 517
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/fr.ts",
+    "sha256": "c8280f5ef14864b0391ea3d48eda8b8a303851314ba4c7146468fc306eecc6f8",
+    "bytes": 494
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/he.ts",
+    "sha256": "0c770257217ee3018aacdf5cd40f9ec4e7620bd9fcf693983c97f5aad0373e31",
+    "bytes": 485
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/hr.ts",
+    "sha256": "95f12e581883a6d4f0aba90c9669b0a924788e8fd15bb22562a75defc9fff7e6",
+    "bytes": 490
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/hu.ts",
+    "sha256": "ced19323561263d7724df958e044193e9c83c28ca05ce814e9dcc5370531b269",
+    "bytes": 500
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/hy.ts",
+    "sha256": "62098c98db755ace7da65461684c8b07fb5a8e6d853664ddbd0e7a020d139105",
+    "bytes": 528
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/id.ts",
+    "sha256": "52b3cb24d81cf0067de7d554400c45a785c6f58972b0187859399907aac74000",
+    "bytes": 506
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/is.ts",
+    "sha256": "ba6d20b3a1f69f3514d75f168ca8cb8c0944f4f27e06d22e548e6fc710bb8ee0",
+    "bytes": 491
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/it.ts",
+    "sha256": "509d1a2930df85fb46ebc8baadb2cfc648253fea1a31dc1ced8960e9530344c9",
+    "bytes": 484
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/ja.ts",
+    "sha256": "921c39c8ee4a924ec7204a422a027df619dc8db6289896a4cc9171e452584af9",
+    "bytes": 527
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/ko.ts",
+    "sha256": "323f854576443eb09e14b6c07e4542657c1c8bd1a659901128ac79bbd1cea91b",
+    "bytes": 501
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/lt.ts",
+    "sha256": "c63728c0cb4527c53602e04f331fea5e60c1f30c0ee1604918fcfa6bfa6e0d4a",
+    "bytes": 500
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/lv.ts",
+    "sha256": "fadc86e120957a39cd8ac986bb1946d7b5e10900beca5083123ca4069cc87051",
+    "bytes": 505
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/my.ts",
+    "sha256": "58803fab0da28b2b4e0f68d0b9e4f20cd2ec2bafb74323ce461bf5bf85a29b4e",
+    "bytes": 566
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/nb.ts",
+    "sha256": "a523f0810c2670cfda52b9bf788d9d06eb5e32e22c26972045ae80fb0c175490",
+    "bytes": 506
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/nl.ts",
+    "sha256": "ae8a751a3b96c91e53e4c40df27c8aea7c513410766a52c07e1861fc742bf3a8",
+    "bytes": 484
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/pl.ts",
+    "sha256": "27bcef1e94058a708d4e921a601c0f6ee071bc3bf92d6cdd2a5205061097b353",
+    "bytes": 485
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/pt.ts",
+    "sha256": "23897c2ac2ef7bfd819e0e01983bfa8666f083a5a2c40d2022bbed8d624ec46f",
+    "bytes": 490
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/rn.sh",
+    "sha256": "506da417be8ec1f9970f8d546f6a97490cd24aafca55040023d259db6dc44bc6",
+    "bytes": 61
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/ro.ts",
+    "sha256": "a4e8816238a5bf86d88ce9798560679ed76df4548fa7536628ba69eddf84cd2c",
+    "bytes": 483
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/rs.ts",
+    "sha256": "c9dc4cf0097c963283010dc32969a72b54e5131596571263601d8eaa845dd818",
+    "bytes": 480
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/rsLatin.ts",
+    "sha256": "2e08b5700f2626e449207c26f5b38adbf06e8e60ef1b6fd43f39257b65cad69f",
+    "bytes": 499
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/ru.ts",
+    "sha256": "0ac161088a0d539b445d40c59b917485c10056d06e9973845a39d447fd755868",
+    "bytes": 551
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/sk.ts",
+    "sha256": "71a2c9b2af824d1f9776c2afa6c17cba2b9731effddeca17d702d73a8189da19",
+    "bytes": 489
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/sl.ts",
+    "sha256": "dcffcdeb73b4d8a9b94f4cb79b319565b9e224a2bbc4611b3f4a2f498ab10c04",
+    "bytes": 485
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/sv.ts",
+    "sha256": "52efb20222f1adcd6333a1b2893fdc623605f64ff817e0bc7bb72dce5b9daa82",
+    "bytes": 492
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/ta.ts",
+    "sha256": "a124b6167cb6bfe9beab5321b05d84fedae2a8716f0b7473aeabda510e17eb5f",
+    "bytes": 583
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/th.ts",
+    "sha256": "f08d4303670e275ba0899d6a14113cd0d57e9ffc70d6d44d3bb86c6b6f877dd0",
+    "bytes": 585
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/tr.ts",
+    "sha256": "985c937f2379aa559c60885b156dce6b20eab915b10993e7febea305d65910ad",
+    "bytes": 475
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/uk.ts",
+    "sha256": "1d51fadc9107db9ac5f24e3acd29803f46802416a843bb55d0b390609457c697",
+    "bytes": 541
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/vi.ts",
+    "sha256": "c0c974a1340d6bf03dec0d85f4d262b437969d8f4a7c1cf247e42305b9b7dbc1",
+    "bytes": 506
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/zh.ts",
+    "sha256": "ef5d0b664a0066b12ff6142bd4dc43f79db5312829413f5a7d176123e4e01d73",
+    "bytes": 473
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/translations/languages/zhTw.ts",
+    "sha256": "da621e1bd1e9c5477c6f484edfb6929a82da56b4d3e955b5ed7bdab1b49ca794",
+    "bytes": 483
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/addCollectionAccess.ts",
+    "sha256": "b8415b5fdd37aed2ae4c570b855b19f6c339037712d98e5ff9287305084421f0",
+    "bytes": 1535
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/addFilterOptionsToFields.ts",
+    "sha256": "43e304d18f0caba0b63e9c727a8cafd4c6a8a6177fa01b9d3525bee507840e6c",
+    "bytes": 7137
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/combineFilters.ts",
+    "sha256": "5c69dff725a746067078a73cdbfefe62453d32ca1e55ea1b0ff6e7c624c67730",
+    "bytes": 1089
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/combineWhereConstraints.ts",
+    "sha256": "bd8c37987b5db33ae5e1330033e653745f713df38acc4b5faf505d6fd859c3e3",
+    "bytes": 492
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/extractID.ts",
+    "sha256": "ee44d6dab61466f72c04d902edf91fd426834511f1fe1af540bb911b981445d4",
+    "bytes": 282
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/generateCookie.ts",
+    "sha256": "4493d3817b7ee6330816ac99caeb4e36e876ca81c65e1aeb61ee7a62ce741050",
+    "bytes": 2099
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/getCollectionIDType.ts",
+    "sha256": "770f9a5674bb6f7a61ccc5b7b4d8fae4a14b711e069771bb673991e8c86b8852",
+    "bytes": 308
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/getGlobalViewRedirect.ts",
+    "sha256": "5a707202d60850e1aaaaee8bd11a03e511a6f7c04eb62b39265bea602c27c5ea",
+    "bytes": 5462
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/getTenantAccess.ts",
+    "sha256": "9097441a89c4692689136f4b17e924ff13c6708dbb2b64d3476353afb1f2cdc1",
+    "bytes": 755
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/getTenantFromCookie.ts",
+    "sha256": "948b16dad3bcc13793c8c024c4fe80184b8123d590e89bc4dff389fff5fa5dfc",
+    "bytes": 764
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/getTenantIDsFromValue.ts",
+    "sha256": "11e21b076fd981b6f65965f26ec09d8636c210b42613dd638e8d496fb7b4caac",
+    "bytes": 469
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/getTenantOptions.ts",
+    "sha256": "983b7018b143eb61ac5e40f41419d5b536fe5566c26ad0b1ca0fea164737cfa5",
+    "bytes": 1948
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/getUserTenantIDs.ts",
+    "sha256": "b10e556f99b1ede0487d1c7ed90b08fe71ffb52456fec155e4b8670231dcba79",
+    "bytes": 1093
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/isValidTenantAssignment.spec.ts",
+    "sha256": "a9e5dc17466ada189d285f451b04fc148af0c250d4e138044b9df408d48a097c",
+    "bytes": 2966
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/isValidTenantAssignment.ts",
+    "sha256": "023becda373b3304b493f8133f32192d3ac3dfe620721c68f8c75721db8aad16",
+    "bytes": 2605
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/miniChalk.ts",
+    "sha256": "b5b418c7b690a9c6f774fc54d48414c4d553eb3b0d1b4396e0387c26b17ef68d",
+    "bytes": 1080
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/shouldRefreshTenantSelection.ts",
+    "sha256": "ae295c4e194745ba228de2d0ae3e0c5dde00598914d0e9e30a21fc14234ae72b",
+    "bytes": 195
+  },
+  {
+    "source": "packages/plugin-multi-tenant/src/utilities/withTenantAccess.ts",
+    "sha256": "125b06cbb3b23cbbd6fcb36d16aa5668c79d7cabee6eba9c2727e7bf193b70bd",
+    "bytes": 3392
+  }
+]

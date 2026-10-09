@@ -1,0 +1,368 @@
+{
+  "recordDate": "2026-10-09",
+  "scope": "Earlier local candidate execution and fresh portable public-source reproduction",
+  "runtime": {
+    "platform": "Windows",
+    "node": "24.19.0",
+    "npm": "11.17.0",
+    "headlessChromium": "156.0.8078.4"
+  },
+  "versions": {
+    "payload": "3.90.2",
+    "copiedPlugin": "3.90.2",
+    "nextBaseline": "15.4.11",
+    "nextAdapted": "16.3.8",
+    "react": "19.2.8",
+    "playwright": "1.64.0"
+  },
+  "completed": [
+    "clean npm ci",
+    "copied plugin strict TypeScript and asset build",
+    "native type generation",
+    "application typecheck after build",
+    "production Webpack build"
+  ],
+  "recordedChecks": {
+    "main": 25,
+    "extra": 8,
+    "restart": 3,
+    "total": 36,
+    "results": [
+      {
+        "name": "missing session list",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "malformed session list",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "anonymous versions",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "requester list belongs only to tenant 1",
+        "passed": true
+      },
+      {
+        "name": "create-body foreign tenant spoof",
+        "status": 400,
+        "passed": true
+      },
+      {
+        "name": "required body validation",
+        "status": 400,
+        "passed": true
+      },
+      {
+        "name": "bounded subject validation",
+        "status": 400,
+        "passed": true
+      },
+      {
+        "name": "native create succeeds",
+        "passed": true
+      },
+      {
+        "name": "requester cannot choose initial staff status",
+        "passed": true
+      },
+      {
+        "name": "requester cannot forge initial response",
+        "passed": true
+      },
+      {
+        "name": "other tenant direct ID",
+        "status": 404,
+        "passed": true
+      },
+      {
+        "name": "requester update",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "staff foreign update",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "forged tenant cookie cannot expand membership",
+        "passed": true
+      },
+      {
+        "name": "protected membership PATCH leaves original membership",
+        "passed": true
+      },
+      {
+        "name": "protected global role cannot self-elevate",
+        "passed": true
+      },
+      {
+        "name": "membership switch cannot expose foreign ID",
+        "status": 404,
+        "passed": true
+      },
+      {
+        "name": "staff update succeeds without tenant in required access predicate",
+        "passed": true
+      },
+      {
+        "name": "request tenant is immutable",
+        "passed": true
+      },
+      {
+        "name": "native ordinary update accepts a stale supplied timestamp",
+        "passed": true
+      },
+      {
+        "name": "native version list readable in own tenant",
+        "passed": true
+      },
+      {
+        "name": "version states include new, in_progress and closed",
+        "passed": true
+      },
+      {
+        "name": "foreign history list is empty",
+        "passed": true
+      },
+      {
+        "name": "foreign version direct ID",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "delete disabled",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "anonymous direct request ID",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "anonymous update",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "malformed session create",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "tenant 2 list scoped to tenant 2",
+        "passed": true
+      },
+      {
+        "name": "requester cannot self-promote within own tenant",
+        "passed": true
+      },
+      {
+        "name": "self-promotion cannot grant staff update",
+        "status": 403,
+        "passed": true
+      },
+      {
+        "name": "anonymous native slug page does not expose private request",
+        "status": 307,
+        "passed": true
+      },
+      {
+        "name": "foreign requester native slug page does not expose private request",
+        "status": 307,
+        "passed": true
+      },
+      {
+        "name": "request survives restart",
+        "passed": true
+      },
+      {
+        "name": "native versions survive restart",
+        "passed": true
+      },
+      {
+        "name": "foreign direct ID after restart",
+        "status": 404,
+        "passed": true
+      }
+    ]
+  },
+  "nativeForms": {
+    "requester": {
+      "passed": true,
+      "flow": "login/list/create/required error/save/detail",
+      "subjectRetainedOnError": true,
+      "pageErrors": []
+    },
+    "staff": {
+      "passed": true,
+      "flow": "native staff status/response/save/version list",
+      "observedVersionRows": 3,
+      "pageErrors": []
+    }
+  },
+  "persistence": {
+    "controlledRestartPassed": true,
+    "observedSnapshotsSurvived": 3
+  },
+  "listener": "127.0.0.1:3230",
+  "baseline": {
+    "composition": "Original application/domain behavior with explicit official SQLite and pinned Windows runtime composition",
+    "anonymousPagesRead": {
+      "status": 200,
+      "total": 3,
+      "intendedPublicBehavior": true
+    },
+    "tenantAdminSelfMembership": {
+      "patchAccepted": true,
+      "subsequentListTotal": 2,
+      "fixtureRestored": true
+    },
+    "fullUnchangedPostgreSQLExecution": false,
+    "fullBaselineProductionBuild": false
+  },
+  "limits": {
+    "staleUpdatedAtAccepted": true,
+    "versionsMaxPerDocument": 20,
+    "appendOnlyEventsDemonstrated": false,
+    "atomicStateHistoryRollbackDemonstrated": false,
+    "actorAttributedHistoryDemonstrated": false,
+    "productionMigrationsVerified": false
+  },
+  "productionAudit": {
+    "counts": {
+      "info": 0,
+      "low": 0,
+      "moderate": 5,
+      "high": 0,
+      "critical": 0,
+      "total": 5
+    },
+    "path": [
+      "@payloadcms/db-sqlite@3.90.2",
+      "drizzle-kit@0.31.7",
+      "@esbuild-kit/esm-loader@2.6.5",
+      "@esbuild-kit/core-utils@3.3.2",
+      "esbuild@0.18.20"
+    ],
+    "advisory": "GHSA-67mh-4wv8-2f99",
+    "clean": false
+  },
+  "unperformed": [
+    "cold-cache network npm dependency download",
+    "Chromium download step",
+    "remote CI",
+    "full upstream monorepo harness",
+    "formal accessibility audit",
+    "Linux execution",
+    "production migration validation"
+  ],
+  "sourceEvidenceHashes": [
+    {
+      "name": "requests-api.json",
+      "sha256": "fff279ffe7fff5faac0dae9a588141e541133a6b55c6e0ea09be77395537b33f"
+    },
+    {
+      "name": "boundary-extra.json",
+      "sha256": "45a0faed96170c9a393c5382f7d780a333a0fe98e4b588c2d6fc61c67d5d8d04"
+    },
+    {
+      "name": "restart-api.json",
+      "sha256": "98623095687a99c4483997d84df5e6e90b2f312e8a533d8eff3a42583e7d5f69"
+    },
+    {
+      "name": "requests-browser.json",
+      "sha256": "d46012ea97faad6092500ba0634720ee1ac17b25d86fbfb8fc15392a019e308b"
+    },
+    {
+      "name": "staff-browser.json",
+      "sha256": "95a99ac6102306aad86a8efb82a7bfec5c4c7de7ccc35786ef5a575eb44c7349"
+    },
+    {
+      "name": "remediation-audit-production.json",
+      "sha256": "c609ee078e9fe67bdd000e44335bfab09d806b2de276246b530a08e668366d45"
+    },
+    {
+      "name": "baseline-api.json",
+      "sha256": "5d6af0da3aa04c1e5bac5af435f5ac451e56c54dde5590ad359ecf43cb0a7f39"
+    },
+    {
+      "name": "baseline-browser.json",
+      "sha256": "e3db8308accb324aa5b188f155ecb38da679882d7464382c6dd520d53c34f7dd"
+    }
+  ],
+  "freshPortableReproduction": {
+    "completedAt": "2026-10-09T10:55:47.213Z",
+    "inputManifestSha256": "66f5c8c7ecebf9855788441d7487621aac3826da737ad26db7f16b7b9138982b",
+    "inputFiles": 272,
+    "runtime": {
+      "node": "v24.19.0",
+      "npm": "11.17.0",
+      "chromium": "156.0.8078.4"
+    },
+    "initialInputs": {
+      "environmentCopied": false,
+      "databaseCopied": false,
+      "nodeModulesCopied": false,
+      "buildCacheCopied": false,
+      "copiedNpmCache": true,
+      "copiedMatchingChromiumCache": true
+    },
+    "commands": [
+      "node scripts/verify-source.mjs",
+      "npm ci --offline --no-audit --fund=false --cache .cache/npm",
+      "npm run build:plugin",
+      "npm run dev; one native /admin/login initialization; stop",
+      "SEED_DB=false",
+      "npm run generate:types",
+      "npm run build",
+      "npm run typecheck",
+      "npm start",
+      "node scripts/requests-api-test.mjs",
+      "node scripts/boundary-extra-test.mjs",
+      "node scripts/native-form-probe.mjs --requests",
+      "node scripts/staff-form-test.mjs",
+      "stop/restart with same database",
+      "node scripts/requests-api-test.mjs --restart"
+    ],
+    "installedPackages": 384,
+    "allFiniteCommandsExitZero": true,
+    "checks": {
+      "mainChecks": 25,
+      "extraChecks": 8,
+      "restartChecks": 3,
+      "totalChecks": 36,
+      "nativeRequesterFormsPassed": true,
+      "nativeStaffFormsPassed": true,
+      "pageErrors": [],
+      "staffVersionRowsObserved": 2,
+      "apiSnapshotsSurvived": 3,
+      "staleUpdatedAtAccepted": true,
+      "versionsMaxPerDoc": 20
+    },
+    "nativeFormPageErrors": [],
+    "browserDownloadPerformed": false,
+    "networkDependencyDownloadPerformed": false,
+    "auditRefreshed": false,
+    "sourcePreservation": {
+      "candidateUnchanged": true,
+      "candidateInventoryFiles": 615,
+      "threeCandidateDatabasesUnchanged": true,
+      "publicAppSourceAndLockUnchanged": true,
+      "customApplicationDelta": {
+        "files": 7,
+        "added": 74,
+        "removed": 49
+      }
+    },
+    "ownedServersStopped": true,
+    "applicationOrSetupCorrections": 0,
+    "privateReceiptSha256": "cb487e0e929340bb63716038eff6d7ed709753ae590d2024d2335c41633f6f56"
+  }
+}

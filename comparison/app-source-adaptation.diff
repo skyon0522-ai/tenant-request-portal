@@ -1,0 +1,304 @@
+diff --git a/baseline-source/src/app/(app)/page.tsx b/app/src/app/(app)/page.tsx
+index 2979bf4..1bb28a6 100644
+--- a/baseline-source/src/app/(app)/page.tsx
++++ b/app/src/app/(app)/page.tsx
+@@ -1,29 +1,21 @@
+ export default async ({ params: paramsPromise }: { params: Promise<{ slug: string[] }> }) => {
+   return (
+     <div>
+-      <h1>Multi-Tenant Example</h1>
++      <h1>Tenant Request Portal</h1>
+       <p>
+-        This multi-tenant example allows you to explore multi-tenancy with domains and with slugs.
++        Create and track customer service requests for your demo company using the existing Payload forms.
+       </p>
+ 
+-      <h2>Domains</h2>
+-      <p>When you visit a tenant by domain, the domain is used to determine the tenant.</p>
++      <h2>Requests</h2>
++      <p>Requesters can create and view requests. Staff can change their status and respond within their assigned company.</p>
+       <p>
+-        For example, visiting{' '}
+-        <a href="http://gold.localhost:3000/tenant-domains/login">
+-          http://gold.localhost:3000/tenant-domains/login
+-        </a>{' '}
+-        will show the tenant with the domain "gold.localhost".
++        <a href="/admin/collections/pages">Open Requests</a>
+       </p>
+ 
+-      <h2>Slugs</h2>
+-      <p>When you visit a tenant by slug, the slug is used to determine the tenant.</p>
++      <h2>Synthetic local demo</h2>
++      <p>These accounts and requests are test fixtures. This example does not verify a real person or connect to SSO.</p>
+       <p>
+-        For example, visiting{' '}
+-        <a href="http://localhost:3000/tenant-slugs/silver/login">
+-          http://localhost:3000/tenant-slugs/silver/login
+-        </a>{' '}
+-        will show the tenant with the slug "silver".
++        Requester: requester1@example.test. Staff: tenant1@payloadcms.com. Local demo password: demo.
+       </p>
+     </div>
+   )
+diff --git a/baseline-source/src/collections/Pages/access/superAdminOrTenantAdmin.ts b/app/src/collections/Pages/access/superAdminOrTenantAdmin.ts
+index 3376157..0c7e5cc 100644
+--- a/baseline-source/src/collections/Pages/access/superAdminOrTenantAdmin.ts
++++ b/app/src/collections/Pages/access/superAdminOrTenantAdmin.ts
+@@ -15,11 +15,5 @@ export const superAdminOrTenantAdminAccess: Access = ({ req }) => {
+   }
+ 
+   const adminTenantAccessIDs = getUserTenantIDs(req.user, 'tenant-admin')
+-  const requestedTenant = req?.data?.tenant
+-
+-  if (requestedTenant && adminTenantAccessIDs.includes(requestedTenant)) {
+-    return true
+-  }
+-
+-  return false
++  return { tenant: { in: adminTenantAccessIDs } }
+ }
+diff --git a/baseline-source/src/collections/Pages/index.ts b/app/src/collections/Pages/index.ts
+index 3d3cc0d..ba33d7d 100644
+--- a/baseline-source/src/collections/Pages/index.ts
++++ b/app/src/collections/Pages/index.ts
+@@ -2,13 +2,18 @@ import type { CollectionConfig } from 'payload'
+ 
+ import { ensureUniqueSlug } from './hooks/ensureUniqueSlug'
+ import { superAdminOrTenantAdminAccess } from '@/collections/Pages/access/superAdminOrTenantAdmin'
++import { getUserTenantIDs } from '@/utilities/getUserTenantIDs'
++import { isSuperAdmin } from '@/access/isSuperAdmin'
+ 
+ export const Pages: CollectionConfig = {
+   slug: 'pages',
++  labels: { singular: 'Request', plural: 'Requests' },
++  versions: { maxPerDoc: 20 },
+   access: {
+-    create: superAdminOrTenantAdminAccess,
+-    delete: superAdminOrTenantAdminAccess,
+-    read: () => true,
++    create: ({ req }) => isSuperAdmin(req.user) || getUserTenantIDs(req.user).length > 0,
++    delete: () => false,
++    read: ({ req }) => Boolean(req.user),
++    readVersions: ({ req }) => Boolean(req.user),
+     update: superAdminOrTenantAdminAccess,
+   },
+   admin: {
+@@ -17,11 +22,37 @@ export const Pages: CollectionConfig = {
+   fields: [
+     {
+       name: 'title',
++      label: 'Subject',
+       type: 'text',
++      required: true,
++      maxLength: 120,
++    },
++    {
++      name: 'body',
++      type: 'textarea',
++      required: true,
++      maxLength: 4000,
++    },
++    {
++      name: 'status',
++      type: 'select',
++      defaultValue: 'new',
++      required: true,
++      options: ['new', 'in_progress', 'closed'],
++      access: { create: () => false },
++    },
++    {
++      name: 'response',
++      type: 'textarea',
++      maxLength: 4000,
++      access: { create: () => false },
+     },
+     {
+       name: 'slug',
++      label: 'Reference',
+       type: 'text',
++      required: true,
++      maxLength: 80,
+       defaultValue: 'home',
+       hooks: {
+         beforeValidate: [ensureUniqueSlug],
+diff --git a/baseline-source/src/collections/Tenants/access/byTenant.ts b/app/src/collections/Tenants/access/byTenant.ts
+index 05fc99a..a64dd5d 100644
+--- a/baseline-source/src/collections/Tenants/access/byTenant.ts
++++ b/app/src/collections/Tenants/access/byTenant.ts
+@@ -1,6 +1,7 @@
+ import type { Access } from 'payload'
+ 
+ import { isSuperAdmin } from '../../../access/isSuperAdmin'
++import { extractID } from '../../../utilities/extractID'
+ 
+ export const filterByTenantRead: Access = (args) => {
+   // Allow public tenants to be read by anyone
+@@ -30,7 +31,7 @@ export const canMutateTenant: Access = ({ req }) => {
+         req.user?.tenants
+           ?.map(({ roles, tenant }) =>
+             roles?.includes('tenant-admin')
+-              ? tenant && (typeof tenant === 'string' ? tenant : tenant.id)
++              ? tenant && extractID(tenant)
+               : null,
+           )
+           .filter(Boolean) || [],
+diff --git a/baseline-source/src/collections/Users/index.ts b/app/src/collections/Users/index.ts
+index f29b428..bb5a726 100644
+--- a/baseline-source/src/collections/Users/index.ts
++++ b/app/src/collections/Users/index.ts
+@@ -1,6 +1,5 @@
+ import type { CollectionConfig } from 'payload'
+ 
+-import { createAccess } from './access/create'
+ import { readAccess } from './access/read'
+ import { updateAndDeleteAccess } from './access/updateAndDelete'
+ import { externalUsersLogin } from './endpoints/externalUsersLogin'
+@@ -13,8 +12,14 @@ const defaultTenantArrayField = tenantsArrayField({
+   tenantsArrayFieldName: 'tenants',
+   tenantsArrayTenantFieldName: 'tenant',
+   tenantsCollectionSlug: 'tenants',
+-  arrayFieldAccess: {},
+-  tenantFieldAccess: {},
++  arrayFieldAccess: {
++    create: ({ req }) => isSuperAdmin(req.user),
++    update: ({ req }) => isSuperAdmin(req.user),
++  },
++  tenantFieldAccess: {
++    create: ({ req }) => isSuperAdmin(req.user),
++    update: ({ req }) => isSuperAdmin(req.user),
++  },
+   rowFields: [
+     {
+       name: 'roles',
+@@ -25,16 +30,7 @@ const defaultTenantArrayField = tenantsArrayField({
+       required: true,
+       access: {
+         update: ({ req }) => {
+-          const { user } = req
+-          if (!user) {
+-            return false
+-          }
+-
+-          if (isSuperAdmin(user)) {
+-            return true
+-          }
+-
+-          return true
++          return isSuperAdmin(req.user)
+         },
+       },
+     },
+@@ -44,7 +40,7 @@ const defaultTenantArrayField = tenantsArrayField({
+ const Users: CollectionConfig = {
+   slug: 'users',
+   access: {
+-    create: createAccess,
++    create: ({ req }) => isSuperAdmin(req.user),
+     delete: updateAndDeleteAccess,
+     read: readAccess,
+     update: updateAndDeleteAccess,
+diff --git a/baseline-source/src/payload-types.ts b/app/src/payload-types.ts
+index 187cb21..4f7ee3c 100644
+--- a/baseline-source/src/payload-types.ts
++++ b/app/src/payload-types.ts
+@@ -126,8 +126,11 @@ export interface UserAuthOperations {
+ export interface Page {
+   id: number;
+   tenant?: (number | null) | Tenant;
+-  title?: string | null;
+-  slug?: string | null;
++  title: string;
++  body: string;
++  status: 'new' | 'in_progress' | 'closed';
++  response?: string | null;
++  slug: string;
+   updatedAt: string;
+   createdAt: string;
+ }
+@@ -273,6 +276,9 @@ export interface PayloadMigration {
+ export interface PagesSelect<T extends boolean = true> {
+   tenant?: T;
+   title?: T;
++  body?: T;
++  status?: T;
++  response?: T;
+   slug?: T;
+   updatedAt?: T;
+   createdAt?: T;
+diff --git a/baseline-source/src/payload.config.ts b/app/src/payload.config.ts
+index 836f713..b280ba0 100644
+--- a/baseline-source/src/payload.config.ts
++++ b/app/src/payload.config.ts
+@@ -10,7 +10,6 @@ import Users from './collections/Users'
+ import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant'
+ import { isSuperAdmin } from './access/isSuperAdmin'
+ import type { Config } from './payload-types'
+-import { getUserTenantIDs } from './utilities/getUserTenantIDs'
+ import { seed } from './seed'
+ 
+ const filename = fileURLToPath(import.meta.url)
+@@ -27,7 +26,7 @@ export default buildConfig({
+     client: { url: process.env.DATABASE_URL as string },
+   }),
+   onInit: async (args) => {
+-    if (process.env.SEED_DB) {
++    if (process.env.SEED_DB === 'true') {
+       await seed(args)
+     }
+   },
+@@ -47,12 +46,7 @@ export default buildConfig({
+       tenantField: {
+         access: {
+           read: () => true,
+-          update: ({ req }) => {
+-            if (isSuperAdmin(req.user)) {
+-              return true
+-            }
+-            return getUserTenantIDs(req.user).length > 0
+-          },
++          update: () => false,
+         },
+       },
+       tenantsArrayField: {
+diff --git a/baseline-source/src/seed.ts b/app/src/seed.ts
+index 78cf44b..de314e3 100644
+--- a/baseline-source/src/seed.ts
++++ b/app/src/seed.ts
+@@ -111,6 +111,8 @@ export const seed: NonNullable<Config['onInit']> = async (payload): Promise<void
+       slug: 'home',
+       tenant: tenant1.id,
+       title: 'Page for Tenant 1',
++      body: 'Synthetic customer request for Tenant 1.',
++      status: 'new',
+     },
+   })
+ 
+@@ -120,6 +122,8 @@ export const seed: NonNullable<Config['onInit']> = async (payload): Promise<void
+       slug: 'home',
+       tenant: tenant2.id,
+       title: 'Page for Tenant 2',
++      body: 'Synthetic customer request for Tenant 2.',
++      status: 'new',
+     },
+   })
+ 
+@@ -129,6 +133,19 @@ export const seed: NonNullable<Config['onInit']> = async (payload): Promise<void
+       slug: 'home',
+       tenant: tenant3.id,
+       title: 'Page for Tenant 3',
++      body: 'Synthetic customer request for Tenant 3.',
++      status: 'new',
+     },
+   })
++  for (const [index, tenant] of [tenant1, tenant2].entries()) {
++    await payload.create({
++      collection: 'users',
++      data: {
++        email: `requester${index + 1}@example.test`,
++        password: 'demo',
++        username: `requester${index + 1}`,
++        tenants: [{ tenant: tenant.id, roles: ['tenant-viewer'] }],
++      },
++    })
++  }
+ }

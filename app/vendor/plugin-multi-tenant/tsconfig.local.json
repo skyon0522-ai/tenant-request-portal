@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
+    "rootDir": "src",
+    "strict": true,
+    "target": "ES2022",
+    "declaration": true,
+    "moduleResolution": "NodeNext",
+    "types": [
+      "node"
+    ],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "module": "NodeNext"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "**/*.spec.ts"
+  ]
+}

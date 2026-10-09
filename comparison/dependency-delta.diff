@@ -1,0 +1,52 @@
+diff --git a/baseline-source/package.json b/app/package.json
+index 2a357bf..081e489 100644
+--- a/baseline-source/package.json
++++ b/app/package.json
+@@ -5,12 +5,13 @@
+   "license": "MIT",
+   "type": "module",
+   "scripts": {
+-    "dev": "next dev --hostname 127.0.0.1 --port 3230",
+-    "build": "next build",
++    "dev": "next dev --webpack --hostname 127.0.0.1 --port 3230",
++    "build": "next build --webpack",
+     "start": "next start --hostname 127.0.0.1 --port 3230",
+     "typecheck": "tsc --noEmit",
+     "generate:types": "payload generate:types",
+-    "generate:importmap": "payload generate:importmap"
++    "generate:importmap": "payload generate:importmap",
++    "build:plugin": "node ../scripts/build-plugin.mjs"
+   },
+   "dependencies": {
+     "@payloadcms/db-sqlite": "3.90.2",
+@@ -20,12 +21,12 @@
+     "@payloadcms/ui": "3.90.2",
+     "@payloadcms/translations": "3.90.2",
+     "graphql": "16.9.0",
+-    "next": "15.4.11",
++    "next": "16.3.8",
+     "payload": "3.90.2",
+     "qs-esm": "8.0.1",
+     "react": "19.2.8",
+     "react-dom": "19.2.8",
+-    "sharp": "0.32.6",
++    "sharp": "0.35.5",
+     "chalk": "5.6.2"
+   },
+   "devDependencies": {
+@@ -38,5 +39,14 @@
+   "engines": {
+     "node": "^18.20.2 || >=20.9.0"
+   },
+-  "private": true
++  "private": true,
++  "overrides": {
++    "sharp": "0.35.5",
++    "undici": "7.29.1",
++    "dompurify": "3.4.16",
++    "@payloadcms/next": {
++      "sass": "1.105.1"
++    },
++    "postcss": "8.5.29"
++  }
+ }
