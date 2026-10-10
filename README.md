@@ -4,6 +4,17 @@ A local service-request demo for separate customer companies. Requesters create 
 
 This is an adaptation of the actual [Payload multi-tenant example v3.90.2](https://github.com/payloadcms/payload/tree/6254c3bf561a205223849a6497d7dae824d4e81b/examples/multi-tenant), with its tenant plugin copied as source and compiled locally. It adds private Requests, bounded subject/body fields, three statuses and protected membership assignments. Payload authentication, admin UI and SQLite storage remain normal dependencies. See [PROVENANCE.md](PROVENANCE.md) for the exact reuse boundary and licenses.
 
+## Repository guide
+
+Start with the [runnable app](app/), then inspect the adapted
+[Requests collection](app/src/collections/Pages/index.ts) and
+[user membership rules](app/src/collections/Users/index.ts).
+[PROVENANCE.md](PROVENANCE.md) distinguishes the copied example and plugin from
+the request changes. [VERIFICATION.md](VERIFICATION.md) records the API, native
+form and restart checks; [SECURITY.md](SECURITY.md) records dependency findings.
+The preserved [original example](original-example/) and
+[comparison source](baseline-source/) are evidence archives.
+
 ## Try the workflow
 
 Open `http://127.0.0.1:3230/admin` after setup. All accounts and requests are synthetic. Every seeded account has the local demo password `demo`.
