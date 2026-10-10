@@ -31,3 +31,12 @@ The follow-up `npm audit --omit=dev` recorded **five moderate findings, zero hig
 The [esbuild advisory](https://github.com/evanw/esbuild/security/advisories/GHSA-67mh-4wv8-2f99) concerns the esbuild `serve` development server and is patched at 0.25.0. Inspection found core-utils using transform/transformSync. This app starts neither esbuild `serve` nor Drizzle Studio. The inspected native SQLite connect path invokes schema push outside production; the tested production command runs the built Next server. This scopes the demonstrated path but does not remove the installed vulnerable dependency. The audit remains non-clean; no forced compiler override is claimed safe.
 
 Audit counts describe the recorded lock and advisory snapshot, not a promise about future advisories. The portable source passed the fresh application procedure recorded in VERIFICATION.md; the dependency audit was not refreshed. No hosted-deployment security assurance is made.
+
+## Report a problem
+
+Use this repository's GitHub Issues for reproducible problems with synthetic data.
+Include the tested commit, steps, expected behavior, and actual result. Do not post
+credentials, customer data, private documents, real logs, or personal information.
+For a security concern, use GitHub's private vulnerability reporting if this
+repository offers it. If no private channel is available, open only a neutral
+request for a private reporting channel; keep exploit details and affected data private.
