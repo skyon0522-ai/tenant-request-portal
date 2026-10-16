@@ -24,13 +24,13 @@ No `npm audit fix --force` or copied plugin implementation rewrite was used. Exa
 
 ## Remaining recorded findings
 
-The follow-up `npm audit --omit=dev` recorded **five moderate findings, zero high and zero critical**. All five share this retained dependency path:
+On **2026-10-16**, a fresh native Linux install was checked with `npm audit --omit=dev --registry=https://registry.npmjs.org --json`, using isolated empty user/global npm configuration. It recorded **five moderate findings, zero high and zero critical**. The audit exited 1 because the moderate findings remain. No audit fix or dependency upgrade was applied. All five share this retained dependency path:
 
 `@payloadcms/db-sqlite 3.90.2 → drizzle-kit 0.31.7 → @esbuild-kit/esm-loader 2.6.5 → @esbuild-kit/core-utils 3.3.2 → esbuild 0.18.20`.
 
 The [esbuild advisory](https://github.com/evanw/esbuild/security/advisories/GHSA-67mh-4wv8-2f99) concerns the esbuild `serve` development server and is patched at 0.25.0. Inspection found core-utils using transform/transformSync. This app starts neither esbuild `serve` nor Drizzle Studio. The inspected native SQLite connect path invokes schema push outside production; the tested production command runs the built Next server. This scopes the demonstrated path but does not remove the installed vulnerable dependency. The audit remains non-clean; no forced compiler override is claimed safe.
 
-Audit counts describe the recorded lock and advisory snapshot, not a promise about future advisories. The portable source passed the fresh application procedure recorded in VERIFICATION.md; the dependency audit was not refreshed. No hosted-deployment security assurance is made.
+Audit counts describe the recorded lock and advisory snapshot, not a promise about future advisories. The lifecycle initializer uses the existing schema-push/transform path without starting an esbuild server. Normal lifecycle startup never seeds. These operational changes do not remove the installed dependency findings or establish hosted-deployment security assurance. See VERIFICATION.md for the current Linux acceptance scope.
 
 ## Report a problem
 

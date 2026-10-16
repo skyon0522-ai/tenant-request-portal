@@ -17,8 +17,8 @@
     },
     {
       "path": "{baseline-source => app}/src/collections/Pages/index.ts",
-      "added": 34,
-      "removed": 3,
+      "added": 36,
+      "removed": 4,
       "generated": false
     },
     {
@@ -34,6 +34,12 @@
       "generated": false
     },
     {
+      "path": "/dev/null => app/src/initialize-demo.ts",
+      "added": 28,
+      "removed": 0,
+      "generated": false
+    },
+    {
       "path": "{baseline-source => app}/src/payload-types.ts",
       "added": 8,
       "removed": 2,
@@ -41,8 +47,8 @@
     },
     {
       "path": "{baseline-source => app}/src/payload.config.ts",
-      "added": 2,
-      "removed": 8,
+      "added": 1,
+      "removed": 13,
       "generated": false
     },
     {
@@ -53,9 +59,9 @@
     }
   ],
   "customApplicationDelta": {
-    "files": 7,
-    "added": 74,
-    "removed": 49
+    "files": 8,
+    "added": 103,
+    "removed": 55
   },
   "newCustomRuntimeCoreFiles": 0,
   "runtimePackage": "app/vendor/plugin-multi-tenant (local file package; compiled from retained src)"

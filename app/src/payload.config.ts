@@ -10,7 +10,6 @@ import Users from './collections/Users'
 import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant'
 import { isSuperAdmin } from './access/isSuperAdmin'
 import type { Config } from './payload-types'
-import { seed } from './seed'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -25,11 +24,6 @@ export default buildConfig({
   db: sqliteAdapter({
     client: { url: process.env.DATABASE_URL as string },
   }),
-  onInit: async (args) => {
-    if (process.env.SEED_DB === 'true') {
-      await seed(args)
-    }
-  },
   editor: lexicalEditor({}),
   graphQL: {
     schemaOutputFile: path.resolve(dirname, 'generated-schema.graphql'),

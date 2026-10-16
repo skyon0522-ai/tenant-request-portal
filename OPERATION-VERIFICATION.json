@@ -1,0 +1,245 @@
+{
+  "date": "2026-10-16",
+  "currentSourceFingerprint": "d57a4b83e49c04ea3bdce316b21eaee165053d44cc145ab2e28202c18e208eb5",
+  "preRepairEvidence": {
+    "date": "2026-10-16",
+    "platform": "Ubuntu 24.04 / WSL2, native Linux source/data/dependencies",
+    "runtime": {
+      "node": "24.19.0",
+      "npm": "11.17.0"
+    },
+    "freshInstall": {
+      "status": "PASS",
+      "dependencyCache": "Reused the previous successful Linux npm download cache; not another cold-cache download.",
+      "steps": [
+        "npm ci",
+        "copied plugin build",
+        "explicit Payload CLI/Local API schema+synthetic seed",
+        "generate types",
+        "production Webpack build",
+        "typecheck"
+      ]
+    },
+    "initialFixtures": {
+      "tenants": 3,
+      "users": 7,
+      "requests": 3
+    },
+    "previousCandidateReproduction": {
+      "firstStartTenants": 3,
+      "repeatedSeedStartTenants": 6,
+      "loginStatusBothRuns": 200
+    },
+    "lifecycleAcceptance": {
+      "passed": 17,
+      "failed": 0,
+      "cases": [
+        "fresh initialization has exact synthetic fixtures",
+        "environment file is mode0600",
+        "direct repeated initializer refuses before writes",
+        "repeated setup preserves database and secret without reseeding",
+        "production login route ready from other working directory",
+        "second start and setup refused while server owns lock",
+        "normal example and API/boundary probes repeat after existing requests",
+        "owned server and operation lock removed",
+        "port3230 closed",
+        "request and retained versions persist across controlled restart",
+        "owned server and operation lock removed",
+        "port3230 closed",
+        "occupied port is refused and unrelated listener retained",
+        "alternate database path refused without changing config or writing target",
+        "existing unmarked database refused unchanged",
+        "PID with mismatched start identity is never signalled",
+        "no server left running after acceptance"
+      ]
+    },
+    "api": {
+      "mainResultEntries": 25,
+      "extraBoundaryResultEntries": 8,
+      "restartResultEntries": 3,
+      "distinctResultEntries": 36,
+      "mainAndBoundaryRuns": 2,
+      "referenceCreates": 2,
+      "normalExampleRuns": 2,
+      "result": "PASS"
+    },
+    "runtimeSourceSha256": "264a741f8ca8a56680bfe6f89c60d25136be3163ca253e3eb8e720cdb27a34d9",
+    "sourceChecks": {
+      "originalExampleFiles": 50,
+      "unchangedPluginImplementationFiles": 91,
+      "notices": "PASS",
+      "customApplicationDelta": {
+        "files": 8,
+        "added": 89.0,
+        "removed": 55.0
+      }
+    },
+    "productionAudit": {
+      "command": "npm audit --omit=dev --registry=https://registry.npmjs.org --json",
+      "exitCode": 1,
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 5,
+        "high": 0,
+        "critical": 0,
+        "total": 5
+      },
+      "fixApplied": false
+    },
+    "ciStaticChecks": {
+      "yamlParse": "PASS",
+      "bashSyntax": "PASS",
+      "actionsPinnedTo40Hex": true,
+      "lifecycleSetupStartStopAndRepeatInitializerPresent": true,
+      "githubExecution": "UNRUN"
+    },
+    "browser": {
+      "status": "OBSERVED_BY_PARENT",
+      "method": "Supported Windows in-app browser against native Linux production server",
+      "runtimeSourceSha256": "264a741f8ca8a56680bfe6f89c60d25136be3163ca253e3eb8e720cdb27a34d9",
+      "flow": [
+        "requester create with automatic reference",
+        "staff status and response save",
+        "requester readback with disabled fields",
+        "foreign-tenant denial"
+      ],
+      "limits": [
+        "One synthetic flow only.",
+        "Not native Linux Chromium, a physical mobile device, or a formal accessibility/security audit."
+      ],
+      "runtimeCodeChangedAfterObservation": false
+    },
+    "limits": [
+      "Synthetic loopback demonstration only.",
+      "Stale supplied updatedAt remains accepted; no CAS claim.",
+      "Native versions capped at20 per request; no append-only/actor-attributed/atomic audit guarantee.",
+      "GitHub workflow execution, production migrations/deployment, formal accessibility and full upstream harness remain unverified."
+    ],
+    "publication": "HELD_FOR_CONSOLIDATED_HUMAN_REVIEW"
+  },
+  "currentBootstrapRepair": {
+    "focusedLifecycleChecks": {
+      "runtime": "v24.19.0",
+      "results": [
+        {
+          "name": "direct CLI refuses alternate existing database before config import; bytes and three tenants preserved",
+          "passed": true
+        },
+        {
+          "name": "direct CLI refuses alternate absent database without creating it",
+          "passed": true
+        },
+        {
+          "name": "direct CLI refuses canonical existing database before config import; bytes and rows preserved",
+          "passed": true
+        },
+        {
+          "name": "direct CLI refuses alternate config before any database is created",
+          "passed": true
+        },
+        {
+          "name": "direct CLI refuses linked database ancestor and preserves outside database",
+          "passed": true
+        },
+        {
+          "name": "fresh direct initialization creates exact fixtures and repeated call preserves database",
+          "passed": true,
+          "counts": {
+            "tenants": 3,
+            "users": 7,
+            "pages": 3
+          }
+        },
+        {
+          "name": "wrapper refuses app symlink before environment, lock or outside writes",
+          "passed": true
+        },
+        {
+          "name": "wrapper refuses dangling-app symlink before environment, lock or outside writes",
+          "passed": true
+        },
+        {
+          "name": "wrapper refuses env symlink before environment, lock or outside writes",
+          "passed": true
+        },
+        {
+          "name": "wrapper refuses data symlink before environment, lock or outside writes",
+          "passed": true
+        },
+        {
+          "name": "wrapper refuses database symlink before environment, lock or outside writes",
+          "passed": true
+        },
+        {
+          "name": "wrapper refuses marker symlink before environment, lock or outside writes",
+          "passed": true
+        }
+      ]
+    },
+    "normalLifecycle": {
+      "loginRouteStatus": 200,
+      "statusExit": 0,
+      "competingStartExit": 1,
+      "stopExit": 0,
+      "supervisorExit": 143,
+      "operationLockRemoved": true,
+      "portClosed": true,
+      "countsUnchanged": true,
+      "environmentHashUnchanged": true,
+      "usesExistingProductionBuild": true
+    },
+    "typecheck": "PASS",
+    "sourceChecks": {
+      "originalExampleFiles": 50,
+      "unchangedPluginSourceFiles": 91,
+      "customApplicationDelta": {
+        "files": 8,
+        "added": 103,
+        "removed": 55
+      },
+      "noticesVerified": true
+    },
+    "ciStaticChecks": {
+      "yamlParse": "PASS",
+      "bashSyntax": "PASS",
+      "actionsPinnedTo40Hex": true,
+      "lifecycleSetupStartStopAndRepeatInitializerPresent": true,
+      "guardRegressionAfterSetup": true,
+      "githubExecution": "UNRUN"
+    }
+  },
+  "browserObservationBoundary": {
+    "status": "HISTORICAL_PRE_REPAIR_FLOW_NOT_REPEATED",
+    "sourceFingerprint": "264a741f8ca8a56680bfe6f89c60d25136be3163ca253e3eb8e720cdb27a34d9",
+    "unchangedRecordedEntries": 44,
+    "changedRecordedEntries": [
+      {
+        "path": "app/src/initialize-demo.ts",
+        "beforeSha256": "110c7e1cc72d7db0c8fac641ecd6222161ef238daffcbff04100bc1c9979b535",
+        "afterSha256": "106e423d65d889be92bb9086831b9aeaaf92293f7573b4eb7d2a1305fe69ef06"
+      },
+      {
+        "path": "scripts/demo.mjs",
+        "beforeSha256": "e55aecc163446acb13f4079f8d2082cc59476e98a9600642f4e527ea925160db",
+        "afterSha256": "bfecae9b1cd694b022685f67e855d24225ad3d42a1231706b24f080d7bc05fd3"
+      }
+    ],
+    "newRegressionScript": "scripts/lifecycle-guard-test.mjs"
+  },
+  "notRepeatedAfterRepair": [
+    "network/install",
+    "production build",
+    "full API suite",
+    "full browser flow",
+    "dependency audit"
+  ],
+  "remainingLimits": [
+    "Synthetic loopback demonstration only.",
+    "Stale supplied updatedAt remains accepted; no CAS claim.",
+    "Native versions capped at20 per request; no append-only/actor-attributed/atomic audit guarantee.",
+    "GitHub workflow execution, production migrations/deployment, formal accessibility and full upstream harness remain unverified.",
+    "Local path preflight is not a guarantee against concurrent hostile filesystem replacement."
+  ],
+  "publication": "NOT_PERFORMED_HELD_FOR_CONSOLIDATED_HUMAN_REVIEW"
+}

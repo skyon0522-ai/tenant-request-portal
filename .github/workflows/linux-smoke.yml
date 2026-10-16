@@ -1,0 +1,76 @@
+# Uses the same local lifecycle commands as the Linux README.
+name: Linux smoke
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  synthetic-api:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Check out source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Set up the recorded Node version
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24.19.0
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Set up, operate and restart one synthetic copy
+        run: |
+          set -euo pipefail
+          umask 077
+          test "$(node --version)" = v24.19.0
+          test "$(npm --version)" = 11.17.0
+          test ! -e app/.env
+          test ! -e data
+          supervisor_pid=
+          stop_owned() {
+            node scripts/demo.mjs stop
+            if [[ -n "$supervisor_pid" ]]; then wait "$supervisor_pid" || true; fi
+            supervisor_pid=
+          }
+          cleanup() { stop_owned || true; }
+          trap cleanup EXIT
+          trap 'exit 130' INT
+          trap 'exit 143' TERM
+          start_owned() {
+            node scripts/demo.mjs start >"$RUNNER_TEMP/tenant-portal.log" 2>&1 &
+            supervisor_pid=$!
+            for attempt in $(seq 1 90); do
+              kill -0 "$supervisor_pid" || return 1
+              if [[ "$(curl --silent --max-time 5 --output /dev/null --write-out '%{http_code}' http://127.0.0.1:3230/admin/login)" = 200 ]]; then return 0; fi
+              sleep 1
+            done
+            echo 'The owned production server did not become ready.' >&2
+            return 1
+          }
+          node scripts/verify-source.mjs
+          node scripts/demo.mjs setup
+          node scripts/verify-source.mjs
+          node scripts/lifecycle-guard-test.mjs
+          if (cd app && node node_modules/payload/bin.js run src/initialize-demo.ts); then
+            echo 'Repeated initialization unexpectedly succeeded.' >&2
+            exit 1
+          fi
+          start_owned
+          node scripts/request-example.mjs
+          node scripts/boundary-extra-test.mjs
+          node scripts/request-reference-test.mjs
+          node scripts/requests-api-test.mjs
+          node scripts/requests-api-test.mjs
+          node scripts/boundary-extra-test.mjs
+          stop_owned
+          start_owned
+          node scripts/requests-api-test.mjs --restart
+          stop_owned

@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { randomUUID } from 'node:crypto'
 
 import { ensureUniqueSlug } from './hooks/ensureUniqueSlug'
 import { superAdminOrTenantAdminAccess } from '@/collections/Pages/access/superAdminOrTenantAdmin'
@@ -53,7 +54,7 @@ export const Pages: CollectionConfig = {
       type: 'text',
       required: true,
       maxLength: 80,
-      defaultValue: 'home',
+      defaultValue: () => randomUUID(),
       hooks: {
         beforeValidate: [ensureUniqueSlug],
       },

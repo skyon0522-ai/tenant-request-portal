@@ -1,0 +1,98 @@
+{
+  "recordDate": "2026-10-15",
+  "scope": "Local Linux baseline reproduction, automatic-reference correction and fresh candidate verification",
+  "baseCommit": "8fd6fb98ebf578500d867294e6e4321718557551",
+  "runtime": {
+    "server": "Ubuntu 24.04/WSL2",
+    "node": "24.19.0",
+    "npm": "11.17.0",
+    "browser": "In-app browser on Windows"
+  },
+  "baseline": {
+    "sourceFiles": 273,
+    "coldNetworkNpmInstallPassed": true,
+    "officialNodeArchive": "https://nodejs.org/dist/v24.19.0/node-v24.19.0-linux-x64.tar.xz",
+    "nodeArchiveSha256": "14b342e71204f811bde6153be8e04b62aef63c236fef92b55f9c83154b409647",
+    "checksumSource": "https://nodejs.org/dist/v24.19.0/SHASUMS256.txt",
+    "buildAndTypecheckPassed": true,
+    "apiBoundaryRestartChecksPassed": 36,
+    "referenceRegression": {
+      "probeExit": 1,
+      "expectedFailure": true,
+      "requestsOmittingReference": 2,
+      "httpStatuses": [
+        400,
+        400
+      ]
+    }
+  },
+  "correctedCandidate": {
+    "freshSourceFilesBeforeFinalDocumentationAndScreenshot": 274,
+    "copiedEnvironmentOrDatabaseOrNodeModulesOrBuildCache": false,
+    "npmInstall": "Fresh install using the successful baseline's populated cache, offline; not a second cold download",
+    "pluginBuildPassed": true,
+    "typeGenerationPassed": true,
+    "productionBuildPassed": true,
+    "typecheckPassed": true,
+    "mainApiChecksPassed": 25,
+    "extraBoundaryChecksPassed": 8,
+    "restartChecksPassed": 3,
+    "automaticReferenceCreates": {
+      "passed": 2,
+      "httpStatuses": [
+        201,
+        201
+      ],
+      "sameTenant": 1,
+      "distinctUuidV4": true
+    },
+    "sameProbeBytesUsedAgainstBaselineAndCandidate": true,
+    "sourceVerificationAfterBuild": {
+      "originalExampleFiles": 50,
+      "unchangedPluginSourceFiles": 91,
+      "customApplicationDelta": {
+        "files": 7,
+        "added": 76,
+        "removed": 50
+      },
+      "noticesVerified": true
+    },
+    "boundApplicationFilesUnchangedDuringExecution": true
+  },
+  "browserObservation": {
+    "requesterCreateWithoutEditingGeneratedReference": true,
+    "generatedReferenceRetainedAfterSave": true,
+    "requesterFieldsReadOnlyAfterSave": true,
+    "correctedCandidateStaffFlowRerun": false,
+    "staffResponseStatusVersionsObservedOnUnchangedLinuxBaseline": true,
+    "screenshot": "docs/images/request-created.jpg",
+    "screenshotSha256": "2d469e563eb8be69b87fbaa9c7d8be1baba55cfd8f0f27ac4a35865b302c41f1"
+  },
+  "sourceSha256": {
+    "app/src/collections/Pages/index.ts": "e3a8239dcc05e5207f899c40b4dbf5c0bfed2a9c0a02b73e14191e4a531ce317",
+    "scripts/request-reference-test.mjs": "d1699b920ec2cc2bb33bb25af8500a1b4b1a23f137a69c9756b73c7d7662d5e2",
+    "SOURCE-DIFF.json": "78059dde1e5a607e207964baad7bf23b7595c21c7dc02798ab343777135ce902",
+    "app/package-lock.json": "aba83bbba931f0d7394d2f152186c5e777494d3a7b35962487ec644be8a13914"
+  },
+  "cleanup": {
+    "apiProbeOwnedServersStopped": true,
+    "browserServerAbsentAtCloseout": true,
+    "loopbackPortClosedAtCloseout": true
+  },
+  "unchangedLimits": {
+    "ordinaryStaleUpdatedAtAccepted": true,
+    "maxVersionsPerRequest": 20,
+    "appendOnlyOrActorAttributedAuditGuarantee": false,
+    "productionMigrationValidation": false
+  },
+  "notPerformed": [
+    "GitHub execution of the new CI workflow",
+    "native Linux Chromium installation",
+    "formal accessibility audit",
+    "full upstream monorepo harness",
+    "production migration validation",
+    "refreshed dependency audit",
+    "hosted deployment"
+  ],
+  "historicalAudit": "Five moderate and zero high/critical findings in the earlier recorded audit; not refreshed for this run"
+}

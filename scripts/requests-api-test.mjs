@@ -1,5 +1,6 @@
 import { writeFile, readFile, mkdir } from 'node:fs/promises'
 import assert from 'node:assert/strict'
+import { randomUUID } from 'node:crypto'
 await mkdir(new URL('../test-results/', import.meta.url), { recursive: true })
 const base = 'http://127.0.0.1:3230'
 const results = []
@@ -48,7 +49,7 @@ if (process.argv.includes('--restart')) {
   denied('create-body foreign tenant spoof', await create({ tenant: 2, slug: 'spoof', title: 'Spoof', body: 'Synthetic probe' }))
   denied('required body validation', await create({ tenant: 1, slug: 'missing-body', title: 'Invalid' }))
   denied('bounded subject validation', await create({ tenant: 1, slug: 'long-subject', title: 'x'.repeat(121), body: 'Synthetic probe' }))
-  const created = await create({ tenant: 1, slug: 'api-request', title: 'Local service request', body: 'Synthetic customer needs assistance.', status: 'closed', response: 'forged staff reply' })
+  const created = await create({ tenant: 1, slug: randomUUID(), title: 'Local service request', body: 'Synthetic customer needs assistance.', status: 'closed', response: 'forged staff reply' })
   equal('native create succeeds', created.status, 201)
   const id = created.body.doc.id
   equal('requester cannot choose initial staff status', created.body.doc.status, 'new')

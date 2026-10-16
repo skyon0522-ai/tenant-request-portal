@@ -10,7 +10,7 @@ Repository: [Payload](https://github.com/payloadcms/payload), tag **v3.90.2**, p
 | Original plugin package/build metadata and notice | `upstream-plugin-metadata/` | Exact pinned Git bytes for package.json, .swcrc, tsconfig.json, README.md and LICENSE.md |
 | Executed composition baseline | `baseline-source/` | Application source/configuration and npm lock before the seven-file Requests improvement |
 
-`SOURCE-MANIFEST.json` maps original example paths and hashes to `original-example/`. `PLUGIN-SOURCE-MANIFEST.json` maps plugin paths and hashes to the working vendor directory. The directory rename from the locally retained `imported-example/` to `original-example/` changes no file bytes. `PUBLIC-STAGE-MANIFEST.json` lists the portable distribution allowlist and hashes. `scripts/verify-source.mjs` checks the original example, plugin implementation and comparison delta.
+`SOURCE-MANIFEST.json` maps original example paths and hashes to `original-example/`. `PLUGIN-SOURCE-MANIFEST.json` maps plugin paths and hashes to the working vendor directory. The directory rename from the locally retained `imported-example/` to `original-example/` changes no file bytes. `PUBLIC-STAGE-MANIFEST.json` is the retained historical portable distribution snapshot. `OPERATION-SOURCE-MANIFEST.json` lists and hashes the current export, excluding itself. `scripts/verify-source.mjs` checks the original example, plugin implementation and comparison delta.
 
 Normal dependencies, not copied-source components: Payload core authentication, validation and version engine; Payload admin/UI and Next integration; official SQLite adapter with Drizzle/libSQL; Lexical; Next; React. The copied example mounts these existing dependencies. No custom authentication, SQL storage, browser form engine or history engine is introduced.
 
@@ -24,7 +24,9 @@ The working plugin retains its original name, version, author and license. Its p
 
 ## Requests improvement
 
-Against `baseline-source/src`, seven non-generated source files change by **74 added and 49 removed lines**. `SOURCE-DIFF.json` separates the generated type delta; `comparison/app-source-adaptation.diff` preserves the exact source diff. No new custom runtime core file is added.
+Against `baseline-source/src`, eight non-generated source files change by **103 added and 55 removed lines** in this operation candidate. `SOURCE-DIFF.json` separates the generated type delta; `comparison/app-source-adaptation.diff` preserves the exact source diff. The original application and plugin remain the runtime core. The new `app/src/initialize-demo.ts` is a local bootstrap through Payload's existing CLI/Local API; `scripts/demo.mjs` supplies Linux setup/process ownership and `scripts/request-example.mjs` supplies a repeatable synthetic operation example.
+
+The previous 2026-10-15 staged candidate is preserved separately. This candidate removes automatic on-start seed execution from its Payload configuration. Explicit initialization runs only with no existing SQLite file. Repeated lifecycle setup preserves initialized data and rebuilds; an unmarked existing database is refused. A later independent review found alternate-database initialization and symbolic-link app-directory gaps. The initializer now validates the exact database/configuration and path ancestry before importing Payload configuration; the launcher preflights protected path ancestry before any environment/lock/data write. The focused regression is `scripts/lifecycle-guard-test.mjs`; original reviewed bytes and findings are retained separately. Runtime and process-ownership checks use native Ubuntu 24.04/WSL2 with Node 24.19.0/npm 11.17.0, as recorded in the current verification section.
 
 | Behavior | Existing component and adaptation |
 | --- | --- |
