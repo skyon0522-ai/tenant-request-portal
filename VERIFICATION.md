@@ -2,6 +2,12 @@
 
 The current operation results are in [OPERATION-VERIFICATION.json](OPERATION-VERIFICATION.json). [LINUX-VERIFICATION.json](LINUX-VERIFICATION.json) preserves the 2026-10-15 Linux run. `VERIFICATION-SUMMARY.json` preserves the earlier Windows candidate and portable reproduction; its unperformed list describes that older run. Full process logs, tokens, databases, environment files and machine paths are excluded from public records. `PUBLIC-STAGE-MANIFEST.json` is the historical portable snapshot; `OPERATION-SOURCE-MANIFEST.json` binds this candidate's files.
 
+## Dependency follow-up — 2026-10-16
+
+[DEPENDENCY-VERIFICATION.json](DEPENDENCY-VERIFICATION.json) records the new scoped esbuild override and its exact runtime binding. A fresh native Linux copy passed locked install, schema/fixture initialization, unchanged-plugin and production builds, type generation and typecheck. Four focused compatibility/CORS checks, 12 lifecycle guards, 25 API checks, eight additional boundaries, two reference checks, the normal requester/staff example and three controlled-restart checks passed. The owned server was stopped and port 3230 closed.
+
+The production audit changed from five moderate dependency-node findings for one advisory to zero reported findings (exit 0). Only package.json/package-lock.json changed among the 47 recorded runtime paths. This override crosses core-utils' declared esbuild range; the checks establish the recorded demonstration only. The full browser flow, full upstream harness and formal security/accessibility/production validation were not repeated. GitHub CI for these new candidate bytes is unrun; the successful initial CI cited below belongs to the earlier exact published head. Earlier checks and unperformed lists below retain their historical scope.
+
 ## Linux installation and operation — 2026-10-16
 
 The previous staged source was inspected alongside its pinned original example, comparison source, installed Payload `run` CLI and SQLite `connect` implementation. A fresh native Linux install of the previous staged code reproduced the startup flaw: the first development start produced three tenants, but restarting with `SEED_DB=true` left six tenants after partial repeated seeding. Existing source packages were preserved.
@@ -33,7 +39,7 @@ The 36 distinct API/boundary/restart result entries remain 25 + 8 + 3; repeated 
 
 The parent separately observed one synthetic flow through the supported Windows in-app browser against the pre-repair native Linux server: requester creation with an automatically supplied reference, staff status/response save, requester readback with disabled fields, and foreign-tenant denial. That observation is bound to fingerprint `264a741f8ca8a56680bfe6f89c60d25136be3163ca253e3eb8e720cdb27a34d9`. The initializer and lifecycle launcher were subsequently repaired as described below; 44 of the 46 recorded entries remain byte-identical. This was not a native Linux browser, physical mobile device or formal accessibility/security audit, and the full browser flow was not repeated after the repair.
 
-The Linux CI workflow now uses the same setup/start/stop commands, checks refusal of repeated initialization and repeats API probes before restart. YAML parsing, extracted Bash syntax and pinned-action checks passed locally; GitHub execution remains unobserved. The current production dependency audit is detailed in SECURITY.md. Concurrency/audit and production-deployment limits below remain applicable; no compare-and-swap change was attempted.
+The Linux CI workflow now uses the same setup/start/stop commands, checks refusal of repeated initialization and repeats API probes before restart. YAML parsing, extracted Bash syntax and pinned-action checks passed locally; GitHub execution had not yet been observed at this pre-publication verification stage. The current production dependency audit is detailed in SECURITY.md. Concurrency/audit and production-deployment limits below remain applicable; no compare-and-swap change was attempted.
 
 ## Lifecycle guard repair — 2026-10-16
 
@@ -69,7 +75,7 @@ The same new probe bytes were used for the expected baseline failure and the can
 
 The browser ran on Windows against the native Linux loopback server. The current correction's requester create/save flow was observed; the earlier Linux baseline also exercised the staff response/status/version flow. Native Linux Chromium installation and a formal accessibility audit were not performed. Test-only servers were confirmed absent and port 3230 refused connections after observation.
 
-The new GitHub workflow follows the documented Linux lifecycle, including the three API probes and a controlled restart. Its local static checks are separate from GitHub execution, which remains unobserved. The dependency audit was not refreshed. The historical limits below remain applicable.
+The new GitHub workflow follows the documented Linux lifecycle, including the three API probes and a controlled restart. Its local static checks are separate from GitHub execution. The initial GitHub Actions synthetic-api run later passed at published commit [`ee2e50a5677a628d4ef669ffbf674b1647ce79a6`](https://github.com/skyon0522-ai/tenant-request-portal/commit/ee2e50a5677a628d4ef669ffbf674b1647ce79a6) on 2026-10-16 (run [`38848132026`](https://github.com/skyon0522-ai/tenant-request-portal/actions/runs/38848132026)). The dependency audit was not refreshed. The historical limits below remain applicable.
 
 ## Earlier comparison baseline
 

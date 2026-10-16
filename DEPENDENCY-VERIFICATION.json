@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-16",
+  "platform": "Ubuntu 24.04 / WSL2, Linux x86_64",
+  "runtime": {
+    "node": "24.19.0",
+    "npm": "11.17.0"
+  },
+  "previousPublishedHead": "ee2e50a5677a628d4ef669ffbf674b1647ce79a6",
+  "runtimeSourceSha256": "ccb36472c3948a35594deeddcb0c6268adb7bcc94374bf165ec71590f41d5a44",
+  "runtimeBindingScope": "Same 47 source/config/probe paths as the previous accepted runtime; only package.json and package-lock.json changed. Staged and tested native bytes matched.",
+  "changedRuntimeFiles": [
+    {
+      "path": "app/package-lock.json",
+      "beforeSha256": "aba83bbba931f0d7394d2f152186c5e777494d3a7b35962487ec644be8a13914",
+      "afterSha256": "ea0d04753f08634d8357ac8c45f953e254b6b6e6f3738d41c3c96578f0550910"
+    },
+    {
+      "path": "app/package.json",
+      "beforeSha256": "abacecb34132f4ae49736d63c3f30da74413faca96904bf37ca855040b42fee6",
+      "afterSha256": "f2b20126d15d4199765f88fd54ec00f5ec6eb5134ec9d960c30a801258eaac7a"
+    }
+  ],
+  "advisory": "https://github.com/advisories/GHSA-67mh-4wv8-2f99",
+  "dependencyChange": {
+    "scope": "@esbuild-kit/core-utils > esbuild",
+    "before": "0.18.20",
+    "after": "0.25.12",
+    "removedObsoleteNestedLockRecords": 23,
+    "newPackageVersions": 0,
+    "unrelatedLockRecordChanges": 0,
+    "usesAlreadyLockedPatchedVersion": true,
+    "overridesUpstreamDeclaredRange": "~0.18.20"
+  },
+  "productionAudit": {
+    "command": "npm audit --omit=dev --registry=https://registry.npmjs.org --json",
+    "before": {
+      "info": 0,
+      "low": 0,
+      "moderate": 5,
+      "high": 0,
+      "critical": 0,
+      "total": 5
+    },
+    "beforeExitCode": 1,
+    "after": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "afterExitCode": 0,
+    "beforeInterpretation": "One esbuild advisory propagated through five dependency nodes; not five independent advisories.",
+    "scope": "Recorded production dependency/advisory snapshot only; not a full security audit."
+  },
+  "freshLinuxSetup": {
+    "status": "PASS",
+    "steps": [
+      "npm ci",
+      "unchanged copied plugin build",
+      "explicit schema and synthetic-fixture initialization",
+      "type generation",
+      "production Webpack build",
+      "typecheck"
+    ],
+    "dependencyCache": "Reused the accepted task-local npm cache; not a cold-cache network install."
+  },
+  "focusedCompatibility": {
+    "passed": 4,
+    "checks": [
+      "Existing core-utils synchronous TypeScript-to-CommonJS API preserves the export",
+      "Existing core-utils asynchronous TypeScript-to-ESM API preserves the export",
+      "Invalid TypeScript is rejected",
+      "Candidate resolved server omits wildcard CORS"
+    ],
+    "beforeCrossOriginHeader": "*",
+    "afterCrossOriginHeader": null,
+    "scope": "Owned loopback esbuild server and synthetic fixture; no browser-origin exploit against the application was attempted."
+  },
+  "lifecycleGuardChecks": 12,
+  "apiResultEntries": {
+    "requests-api": 25,
+    "boundary-extra": 8,
+    "restart-api": 3,
+    "request-reference": 2
+  },
+  "normalRequestExample": "PASS: requester creation, staff progress/closure, requester readback and retained snapshots",
+  "controlledRestart": "PASS; request and retained versions preserved; owned server stopped and port closed",
+  "sourceVerification": {
+    "originalExampleFiles": 50,
+    "unchangedPluginImplementationFiles": 91,
+    "notices": "PASS"
+  },
+  "newCandidateGitHubCi": "UNRUN; held for owner review before publication",
+  "limits": [
+    "The override crosses the upstream declared esbuild range; the recorded focused and application checks do not prove general upstream compatibility.",
+    "Full browser flow, full upstream suites, production migrations/deployment, concurrency and formal accessibility/security audits were not repeated.",
+    "No new Windows or macOS validation. Older operation/browser records remain historical and are not rebound to this dependency graph."
+  ],
+  "privateEvidenceSha256": {
+    "fresh-setup.json": "6441d51d69bab99c4f701dd5e10c9b3dea4d91b0cddd6848a7c55447c15f7c5f",
+    "fresh-setup.log": "294a43a7e6d70ff8818b07869ebb7d5b9999d3071a376801406aa0bc1695042a",
+    "lock-delta.json": "0c0e013f0f92d1a35de5857664a6754334b5dc73ed48a379e3fcb485a43856d1",
+    "baseline-behavior.json": "cba612a7459eb3360fbbf24bb86b826dc438c2ca3eec72f7fab521c765415c2b",
+    "candidate-behavior.stdout.log": "5df0e1ffbccd06f2e875a0f15118aed8e81e516b85bd5f3e94fe8d0df1cb9910",
+    "baseline-audit-current.json": "516a6d5444c9c2e12bb17e464a8eaf0e6262d0d53654617087b07b77596d8fbf",
+    "candidate-audit.stdout.log": "e8a02009c8c76e17fb095fabb1650973b23f7c5e12b4ba68faad1c44ebb2d611",
+    "candidate-resolved-tree.stdout.log": "06e4d1d3a59523df17b4faf4ff1c88e11f09f23a95848fd01d8aef0d7ba2c517",
+    "lifecycle-guards.stdout.log": "7cca0fb5a77f4269275e36ec1dc7084fc1373dee217966ad0d8255365b71b2a2",
+    "source-verification.stdout.log": "9d7663671008e5faf4c4d380652479d82995be33e83f0d297cec8c683ba71b28",
+    "runtime-checks.json": "eee86ee594167c807e6e98f6c6d03172873c4b7151c0e4c4f1bc9c3843956376",
+    "runtime-source.json": "d752b3859f5d0d13d4d1b6966a5eb560387f52682d54cfc83f294c453b1c5ef7"
+  },
+  "publication": "HELD_FOR_CONSOLIDATED_OWNER_REVIEW"
+}

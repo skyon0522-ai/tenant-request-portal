@@ -22,15 +22,17 @@ Other exact remediation pins and primary references:
 
 No `npm audit fix --force` or copied plugin implementation rewrite was used. Exact overrides are visible in `app/package.json` and the installed graph is bound by `app/package-lock.json`.
 
-## Remaining recorded findings
+## Esbuild dependency follow-up — 2026-10-16
 
-On **2026-10-16**, a fresh native Linux install was checked with `npm audit --omit=dev --registry=https://registry.npmjs.org --json`, using isolated empty user/global npm configuration. It recorded **five moderate findings, zero high and zero critical**. The audit exited 1 because the moderate findings remain. No audit fix or dependency upgrade was applied. All five share this retained dependency path:
+The previous published lock recorded five moderate findings, zero high and zero critical. These were one [esbuild advisory](https://github.com/advisories/GHSA-67mh-4wv8-2f99) propagated through five dependency nodes:
 
 `@payloadcms/db-sqlite 3.90.2 → drizzle-kit 0.31.7 → @esbuild-kit/esm-loader 2.6.5 → @esbuild-kit/core-utils 3.3.2 → esbuild 0.18.20`.
 
-The [esbuild advisory](https://github.com/evanw/esbuild/security/advisories/GHSA-67mh-4wv8-2f99) concerns the esbuild `serve` development server and is patched at 0.25.0. Inspection found core-utils using transform/transformSync. This app starts neither esbuild `serve` nor Drizzle Studio. The inspected native SQLite connect path invokes schema push outside production; the tested production command runs the built Next server. This scopes the demonstrated path but does not remove the installed vulnerable dependency. The audit remains non-clean; no forced compiler override is claimed safe.
+This candidate scopes an npm override to core-utils and reuses the already locked esbuild **0.25.12**. Its regenerated lock removes 23 obsolete nested esbuild/platform records and changes no other surviving package record or version. This crosses core-utils' declared `~0.18.20` range; it is a deliberate compatibility tradeoff, not an upstream compatibility guarantee. [The 0.25.0 release](https://github.com/evanw/esbuild/releases/tag/v0.25.0) documents breaking changes.
 
-Audit counts describe the recorded lock and advisory snapshot, not a promise about future advisories. The lifecycle initializer uses the existing schema-push/transform path without starting an esbuild server. Normal lifecycle startup never seeds. These operational changes do not remove the installed dependency findings or establish hosted-deployment security assurance. See VERIFICATION.md for the current Linux acceptance scope.
+The advisory concerns the esbuild `serve` development server. A focused synthetic loopback fixture reproduced the old wildcard CORS header and observed its absence with the resolved patched version. Existing core-utils synchronous/asynchronous TypeScript transforms and invalid-input rejection passed. Fresh Linux locked installation, schema initialization, plugin/production builds, typecheck, 12 lifecycle guards, 25 API checks, eight additional boundary checks, two reference checks and three controlled-restart checks passed. This app starts neither esbuild `serve` nor Drizzle Studio; these checks do not claim that the application itself was exploitable through that server.
+
+The candidate's `npm audit --omit=dev --registry=https://registry.npmjs.org --json` exited **0**, with **zero reported findings**, on 2026-10-16. This is a production dependency/advisory snapshot, not a formal security audit or assurance about future advisories. The override's focused scope, exact tested files and remaining limits are recorded in [DEPENDENCY-VERIFICATION.json](DEPENDENCY-VERIFICATION.json). The follow-up candidate has not run on GitHub CI; the earlier successful run covers only its linked published head.
 
 ## Report a problem
 

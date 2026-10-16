@@ -47,6 +47,9 @@
     "@payloadcms/next": {
       "sass": "1.105.1"
     },
-    "postcss": "8.5.29"
+    "postcss": "8.5.29",
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.25.12"
+    }
   }
 }

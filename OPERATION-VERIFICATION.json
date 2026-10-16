@@ -1,6 +1,6 @@
 {
   "date": "2026-10-16",
-  "currentSourceFingerprint": "d57a4b83e49c04ea3bdce316b21eaee165053d44cc145ab2e28202c18e208eb5",
+  "currentSourceFingerprint": "ccb36472c3948a35594deeddcb0c6268adb7bcc94374bf165ec71590f41d5a44",
   "preRepairEvidence": {
     "date": "2026-10-16",
     "platform": "Ubuntu 24.04 / WSL2, native Linux source/data/dependencies",
@@ -92,7 +92,8 @@
       "bashSyntax": "PASS",
       "actionsPinnedTo40Hex": true,
       "lifecycleSetupStartStopAndRepeatInitializerPresent": true,
-      "githubExecution": "UNRUN"
+      "githubExecution": "UNRUN",
+      "scope": "Pre-repair local verification before the initial published run."
     },
     "browser": {
       "status": "OBSERVED_BY_PARENT",
@@ -114,11 +115,12 @@
       "Synthetic loopback demonstration only.",
       "Stale supplied updatedAt remains accepted; no CAS claim.",
       "Native versions capped at20 per request; no append-only/actor-attributed/atomic audit guarantee.",
-      "GitHub workflow execution, production migrations/deployment, formal accessibility and full upstream harness remain unverified."
+      "At the pre-repair local verification stage, GitHub workflow execution, production migrations/deployment, formal accessibility and the full upstream harness had not yet been verified."
     ],
     "publication": "HELD_FOR_CONSOLIDATED_HUMAN_REVIEW"
   },
   "currentBootstrapRepair": {
+    "scope": "Local bootstrap repair record as observed before the approved publication.",
     "focusedLifecycleChecks": {
       "runtime": "v24.19.0",
       "results": [
@@ -206,7 +208,8 @@
       "actionsPinnedTo40Hex": true,
       "lifecycleSetupStartStopAndRepeatInitializerPresent": true,
       "guardRegressionAfterSetup": true,
-      "githubExecution": "UNRUN"
+      "githubExecution": "UNRUN",
+      "scope": "Local bootstrap-repair verification before the initial published run."
     }
   },
   "browserObservationBoundary": {
@@ -227,19 +230,36 @@
     ],
     "newRegressionScript": "scripts/lifecycle-guard-test.mjs"
   },
-  "notRepeatedAfterRepair": [
+  "remainingLimits": [
+    "Synthetic loopback demonstration only.",
+    "Stale supplied updatedAt remains accepted; no CAS claim.",
+    "Native versions capped at20 per request; no append-only/actor-attributed/atomic audit guarantee.",
+    "Production migrations/deployment, formal accessibility and the full upstream harness remain unverified.",
+    "Local path preflight is not a guarantee against concurrent hostile filesystem replacement."
+  ],
+  "publicationFollowUp": {
+    "verificationDate": "2026-10-16",
+    "repository": "skyon0522-ai/tenant-request-portal",
+    "publishedHead": "ee2e50a5677a628d4ef669ffbf674b1647ce79a6",
+    "initialCiRunId": 38848132026,
+    "initialCiConclusion": "success",
+    "initialCiUrl": "https://github.com/skyon0522-ai/tenant-request-portal/actions/runs/38848132026",
+    "scope": "Initial GitHub Actions run at the exact previous published head; no follow-up staged changes, including the dependency override, are covered."
+  },
+  "publication": "FOLLOWUP_HELD_FOR_OWNER_REVIEW_PREVIOUS_HEAD_PUBLISHED_AND_CI_SUCCESS",
+  "notRepeatedInBootstrapRepairStage": [
     "network/install",
     "production build",
     "full API suite",
     "full browser flow",
     "dependency audit"
   ],
-  "remainingLimits": [
-    "Synthetic loopback demonstration only.",
-    "Stale supplied updatedAt remains accepted; no CAS claim.",
-    "Native versions capped at20 per request; no append-only/actor-attributed/atomic audit guarantee.",
-    "GitHub workflow execution, production migrations/deployment, formal accessibility and full upstream harness remain unverified.",
-    "Local path preflight is not a guarantee against concurrent hostile filesystem replacement."
-  ],
-  "publication": "NOT_PERFORMED_HELD_FOR_CONSOLIDATED_HUMAN_REVIEW"
+  "dependencyFollowUp": {
+    "record": "DEPENDENCY-VERIFICATION.json",
+    "date": "2026-10-16",
+    "runtimeSourceSha256": "ccb36472c3948a35594deeddcb0c6268adb7bcc94374bf165ec71590f41d5a44",
+    "productionAuditTotal": 0,
+    "newCandidateGitHubCi": "UNRUN",
+    "publication": "HELD_FOR_OWNER_REVIEW"
+  }
 }

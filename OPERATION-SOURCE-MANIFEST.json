@@ -1,6 +1,6 @@
 {
   "date": "2026-10-16",
-  "description": "Current post-review candidate inventory; excludes this manifest itself. Historical snapshots and reviewed v1 bytes are separately retained.",
+  "description": "Follow-up candidate file inventory; excludes this manifest itself. Historical source and verification snapshots remain historical.",
   "files": [
     {
       "path": ".gitattributes",
@@ -23,6 +23,11 @@
       "bytes": 8872
     },
     {
+      "path": "DEPENDENCY-VERIFICATION.json",
+      "sha256": "c379a9a58d364f6c22b60107292c04160e0b469025735a9c806e9f03a99b9bb2",
+      "bytes": 5277
+    },
+    {
       "path": "LICENSE",
       "sha256": "f5622f480e4419ef6be7691d4b04521a5f18365ddedb9a160e92a4b365e94ecd",
       "bytes": 1101
@@ -34,8 +39,8 @@
     },
     {
       "path": "OPERATION-VERIFICATION.json",
-      "sha256": "94631b76d0a1a45e001a59c73959768ed9893d2b66268ab670f39e447f49f1c0",
-      "bytes": 8668
+      "sha256": "6fe5a34957666585643e61395e190533b5c05da10345673c1bff803ac9bbee49",
+      "bytes": 10091
     },
     {
       "path": "PACKAGE-LICENSE-PROVENANCE.json",
@@ -59,13 +64,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "451145e9b02d869decb3a7527cbcddafeeb813f4b32fe663e5ce0104b8be4958",
-      "bytes": 8101
+      "sha256": "cf994a9e743ba91a39d45fe1583820402fd21127afcb2a367fcaaa1112e0fce7",
+      "bytes": 8543
     },
     {
       "path": "SECURITY.md",
-      "sha256": "867b131f1e7af093440841097ce6a346e14d0cb7cdf55b1914965cd3632f51c0",
-      "bytes": 4984
+      "sha256": "c07018b599ce3aee01e2cf05fa29e656d6f5dafb31cf446324c25a54d0b300aa",
+      "bytes": 5470
     },
     {
       "path": "SOURCE-DIFF.json",
@@ -89,8 +94,8 @@
     },
     {
       "path": "VERIFICATION.md",
-      "sha256": "f51f9cc0920a1f298a8174c0f7967e226ee05d8978faa4ef386379cd4f6be438",
-      "bytes": 16694
+      "sha256": "becb5bfc0ddf20a179747e87747854de04f11232f76c3ab6fd33ab8d1bd493b6",
+      "bytes": 18289
     },
     {
       "path": "app/.env.example",
@@ -119,13 +124,13 @@
     },
     {
       "path": "app/package-lock.json",
-      "sha256": "aba83bbba931f0d7394d2f152186c5e777494d3a7b35962487ec644be8a13914",
-      "bytes": 266035
+      "sha256": "ea0d04753f08634d8357ac8c45f953e254b6b6e6f3738d41c3c96578f0550910",
+      "bytes": 253089
     },
     {
       "path": "app/package.json",
-      "sha256": "abacecb34132f4ae49736d63c3f30da74413faca96904bf37ca855040b42fee6",
-      "bytes": 1517
+      "sha256": "f2b20126d15d4199765f88fd54ec00f5ec6eb5134ec9d960c30a801258eaac7a",
+      "bytes": 1587
     },
     {
       "path": "app/src/access/isSuperAdmin.ts",
@@ -198,14 +203,14 @@
       "bytes": 461
     },
     {
-      "path": "app/src/app/(payload)/api/graphql-playground/route.ts",
-      "sha256": "3631dbbecee8a8ecc0221e0f700c18dd10e783ae671e8bf2f2767404c228115c",
-      "bytes": 275
-    },
-    {
       "path": "app/src/app/(payload)/api/graphql/route.ts",
       "sha256": "7d02d6088f7462fd16a05790e85320d6b0c8773f9b656dc107feb0172f8f7c8b",
       "bytes": 315
+    },
+    {
+      "path": "app/src/app/(payload)/api/graphql-playground/route.ts",
+      "sha256": "3631dbbecee8a8ecc0221e0f700c18dd10e783ae671e8bf2f2767404c228115c",
+      "bytes": 275
     },
     {
       "path": "app/src/app/(payload)/custom.scss",
@@ -933,14 +938,14 @@
       "bytes": 461
     },
     {
-      "path": "baseline-source/src/app/(payload)/api/graphql-playground/route.ts",
-      "sha256": "3631dbbecee8a8ecc0221e0f700c18dd10e783ae671e8bf2f2767404c228115c",
-      "bytes": 275
-    },
-    {
       "path": "baseline-source/src/app/(payload)/api/graphql/route.ts",
       "sha256": "7d02d6088f7462fd16a05790e85320d6b0c8773f9b656dc107feb0172f8f7c8b",
       "bytes": 315
+    },
+    {
+      "path": "baseline-source/src/app/(payload)/api/graphql-playground/route.ts",
+      "sha256": "3631dbbecee8a8ecc0221e0f700c18dd10e783ae671e8bf2f2767404c228115c",
+      "bytes": 275
     },
     {
       "path": "baseline-source/src/app/(payload)/custom.scss",
@@ -1198,14 +1203,14 @@
       "bytes": 461
     },
     {
-      "path": "original-example/src/app/(payload)/api/graphql-playground/route.ts",
-      "sha256": "3631dbbecee8a8ecc0221e0f700c18dd10e783ae671e8bf2f2767404c228115c",
-      "bytes": 275
-    },
-    {
       "path": "original-example/src/app/(payload)/api/graphql/route.ts",
       "sha256": "7d02d6088f7462fd16a05790e85320d6b0c8773f9b656dc107feb0172f8f7c8b",
       "bytes": 315
+    },
+    {
+      "path": "original-example/src/app/(payload)/api/graphql-playground/route.ts",
+      "sha256": "3631dbbecee8a8ecc0221e0f700c18dd10e783ae671e8bf2f2767404c228115c",
+      "bytes": 275
     },
     {
       "path": "original-example/src/app/(payload)/custom.scss",
